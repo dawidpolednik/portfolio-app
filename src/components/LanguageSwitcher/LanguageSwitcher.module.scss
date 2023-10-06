@@ -1,0 +1,108 @@
+@import '../../assets/fonts';
+@import url('https://fonts.googleapis.com/css?family=Chivo:300,300i,400,400i,700,700i,900,900i|Saira+Extra+Condensed:100,200,300,400,500,600,700,800|Saira:100,200,300,400,500,600,700,800&display=swap&subset=latin-ext');
+@import '../../assets//styles/variables.scss';
+@import '../../assets//styles/colors.scss';
+
+.wrapper {
+  position: absolute;
+  top: 5%;
+  left: 10%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  & > .label {
+    margin-left: 3px;
+  }
+}
+
+.toggleWrapper {
+  position: relative;
+  display: inline-block;
+  width: 42px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #283d4b;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 19px;
+  &:before {
+    position: absolute;
+    content: '';
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: #fff;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+}
+
+.hiddenInput {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+input:checked + .slider {
+  background-color: #283d4b;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #283d4b;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(17px);
+  -ms-transform: translateX(17px);
+  transform: translateX(17px);
+}
+
+.activeLanguageLabel {
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  padding-left: 10px;
+  font-family: $secondFont;
+}
+
+@media screen and (max-width: 414px) and (max-aspect-ratio: 13/9) {
+  .wrapper {
+    top: 7%;
+    left: 7%;
+  }
+
+  .toggleWrapper {
+    width: 34px;
+    height: 18px;
+  }
+
+  .slider {
+    &:before {
+      height: 15px;
+      width: 15px;
+      bottom: 2px;
+      left: 2px;
+    }
+  }
+
+  input:checked + .slider:before {
+    -webkit-transform: translateX(14px);
+    -ms-transform: translateX(14px);
+    transform: translateX(14px);
+  }
+
+  .activeLanguageLabel {
+    font-size: 15px;
+  }
+}

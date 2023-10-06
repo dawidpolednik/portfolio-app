@@ -1,0 +1,657 @@
+@import '../../assets/fonts';
+@import '../../assets//styles/variables.scss';
+.container {
+  width: 100%;
+  background-color: #16222a;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  .contentWidth {
+    width: 70%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 0 auto;
+    align-items: center;
+
+    .infoContainer {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      color: #eee;
+      text-align: left;
+
+      .contactTitle {
+        font-family: $thirdFont;
+        margin-bottom: 0;
+        font-size: 1.5rem;
+        padding: 10px 0 16px;
+      }
+      .phoneContainer,
+      .mailContainer {
+        .contactContent {
+          display: inline-block;
+          font-size: 15px;
+          font-family: $thirdFont;
+
+          & i {
+            font-size: 1.5rem;
+            line-height: 1.5rem;
+          }
+        }
+      }
+
+      .buttonsContainer {
+        display: flex;
+        width: 65%;
+        align-items: center;
+        justify-content: space-around;
+        padding-bottom: 40px;
+        .ButtonCV {
+          font-family: $secondFont;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100px;
+          padding: 15px 20px;
+          border: 2px solid #eee;
+          background-color: #283d4b;
+          opacity: 0.7;
+          text-decoration: none;
+          font-weight: bold;
+          color: #eee;
+          font-size: 16px;
+          line-height: 16px;
+          transition: 0.6s;
+          &:hover {
+            cursor: pointer;
+            background-color: #eee;
+            color: black;
+          }
+        }
+      }
+    }
+    .socialLinks {
+      display: flex;
+      justify-content: space-between;
+      margin: auto;
+      overflow: hidden;
+      & i {
+        color: #eee;
+        font-size: 30px;
+        padding: 10px 15px;
+        transition-duration: 0.3s;
+        &:hover,
+        &:focus,
+        &:active {
+          cursor: pointer;
+          color: #0e76a8;
+          transform: scale(1.25);
+        }
+      }
+    }
+    .copyright {
+      margin: 0;
+      font-family: $thirdFont;
+      font-weight: 300;
+      font-size: 1.4rem;
+      text-align: center;
+      color: #eee;
+    }
+  }
+}
+@media screen and (max-width: 320px) and (max-aspect-ratio: 13/9) {
+  .container {
+    .contentWidth {
+      width: 100%;
+      grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+      .infoContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .contactTitle {
+          padding: 25px 0 5px;
+          margin-top: 0;
+          font-size: 1.4rem;
+          text-align: center;
+        }
+        .phoneContainer,
+        .mailContainer {
+          text-align: center;
+          .contactContent {
+            margin: 0;
+            padding: 7px;
+            font-size: 12px;
+            & i {
+              font-size: 1.3rem;
+              line-height: 1.5rem;
+            }
+          }
+        }
+
+        .buttonsContainer {
+          width: 80%;
+          padding: 20px 0;
+          .ButtonCV {
+            width: 90px;
+            padding: 15px 10px;
+            font-size: 12px;
+            line-height: 14px;
+          }
+        }
+      }
+      .socialLinks {
+        & i {
+          line-height: 29px;
+          font-size: 27px;
+          &:hover,
+          &:focus,
+          &:active {
+            font-size: 27px;
+          }
+        }
+      }
+      .copyright {
+        padding: 15px 0 30px;
+        font-size: 1.1rem;
+        color: #eee;
+      }
+    }
+  }
+}
+@media screen and (max-width: 414px) and (min-width: 321px) and (max-aspect-ratio: 13/9) {
+  .container {
+    .contentWidth {
+      width: 100%;
+      grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+      .infoContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .contactTitle {
+          padding: 27px 0 7px;
+          margin-top: 0;
+          font-size: 1.5rem;
+          text-align: center;
+        }
+        .phoneContainer,
+        .mailContainer {
+          text-align: center;
+          .contactContent {
+            margin: 0;
+            padding: 9px;
+            font-size: 13px;
+            & i {
+              font-size: 1.3rem;
+              line-height: 1.5rem;
+            }
+          }
+        }
+
+        .buttonsContainer {
+          width: 70%;
+          padding: 20px 0;
+          .ButtonCV {
+            width: 110px;
+            padding: 15px 10px;
+            font-size: 12px;
+            line-height: 14px;
+          }
+        }
+      }
+      .socialLinks {
+        & i {
+          line-height: 29px;
+          font-size: 27px;
+          &:hover,
+          &:focus,
+          &:active {
+            font-size: 27px;
+          }
+        }
+      }
+      .copyright {
+        padding: 15px 0 30px;
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+
+@include breakpoint-only('xs') {
+  .container {
+    .contentWidth {
+      width: 100%;
+      grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+      .infoContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .contactTitle {
+          padding: 30px 0 10px;
+          margin-top: 0;
+          font-size: 1.6rem;
+          text-align: center;
+        }
+        .phoneContainer,
+        .mailContainer {
+          text-align: center;
+          .contactContent {
+            margin: 0;
+            padding: 10px;
+            font-size: 14px;
+            & i {
+              font-size: 1.3rem;
+              line-height: 1.5rem;
+            }
+          }
+        }
+
+        .buttonsContainer {
+          width: 50%;
+          padding: 20px 0;
+          .ButtonCV {
+            width: 110px;
+            padding: 15px 13px;
+            font-size: 15px;
+            line-height: 14px;
+          }
+        }
+      }
+      .socialLinks {
+        & i {
+          line-height: 32px;
+          font-size: 30px;
+          &:hover,
+          &:focus,
+          &:active {
+            font-size: 30px;
+          }
+        }
+      }
+      .copyright {
+        padding: 18px 0 33px;
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+
+@include breakpoint-only('sm') {
+  .container {
+    padding: 10px 0;
+    .contentWidth {
+      width: 90%;
+      grid-template-columns: 1.2fr 0.6fr 1.2fr;
+      grid-gap: 20px;
+      .infoContainer {
+        .contactTitle {
+          font-size: 1.1rem;
+          padding: 5px 0px;
+        }
+        .phoneContainer,
+        .mailContainer {
+          .contactContent {
+            font-size: 11px;
+            margin: 0;
+
+            & i {
+              font-size: 1.1rem;
+              line-height: 1.1rem;
+            }
+          }
+        }
+
+        .buttonsContainer {
+          width: 90%;
+          padding: 10px 0 20px;
+          .ButtonCV {
+            width: 80px;
+            font-size: 11px;
+            line-height: 13px;
+          }
+        }
+      }
+      .socialLinks {
+        & i {
+          line-height: 21px;
+          font-size: 20px;
+          padding: 10px 15px;
+          cursor: pointer;
+          &:hover,
+          &:focus,
+          &:active {
+            font-size: 20px;
+          }
+        }
+      }
+      .copyright {
+        font-size: 0.8rem;
+      }
+    }
+  }
+}
+@media screen and (max-width: 769px) and (min-width: 768px) and (orientation: portrait) {
+  .container {
+    height: 460px;
+    align-items: flex-start;
+    padding: 10px 0;
+    .contentWidth {
+      width: 90%;
+      grid-template-columns: 1.2fr 0.8fr 1fr;
+      grid-gap: 25px;
+      .infoContainer {
+        .contactTitle {
+          font-size: 1.1rem;
+          padding: 5px 0;
+        }
+        .phoneContainer,
+        .mailContainer {
+          .contactContent {
+            font-size: 12px;
+
+            & i {
+              font-size: 1.2rem;
+              line-height: 1.2rem;
+            }
+          }
+        }
+
+        .buttonsContainer {
+          width: 90%;
+          padding: 10px 0 0;
+          .ButtonCV {
+            width: 100px;
+            font-size: 11px;
+            line-height: 15px;
+          }
+        }
+      }
+      .socialLinks {
+        & i {
+          line-height: 22px;
+          font-size: 20px;
+          padding: 10px 15px;
+          cursor: pointer;
+          &:hover,
+          &:focus,
+          &:active {
+            font-size: 20px;
+          }
+        }
+      }
+      .copyright {
+        font-size: 0.85rem;
+      }
+    }
+  }
+}
+@media screen and (max-width: 1280px) and (min-width: 960px) and (orientation: portrait) {
+  .container {
+    height: 760px;
+    align-items: flex-start;
+    padding: 10px 0;
+    .contentWidth {
+      width: 90%;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-gap: 20px;
+      .infoContainer {
+        .contactTitle {
+          font-size: 1.3rem;
+          padding: 10px 0 16px;
+        }
+        .phoneContainer,
+        .mailContainer {
+          .contactContent {
+            font-size: 12px;
+            & i {
+              font-size: 1.2rem;
+              line-height: 1.2rem;
+            }
+          }
+        }
+
+        .buttonsContainer {
+          width: 85%;
+          padding: 10px 0 40px;
+          .ButtonCV {
+            width: 100px;
+            font-size: 13px;
+            line-height: 15px;
+          }
+        }
+      }
+      .socialLinks {
+        & i {
+          line-height: 31px;
+          font-size: 31px;
+          padding: 10px 15px;
+          cursor: pointer;
+          &:hover,
+          &:focus,
+          &:active {
+            font-size: 31px;
+          }
+        }
+      }
+      .copyright {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+@media screen and (max-width: 1280px) and (min-width: 960px) and (orientation: portrait) {
+  .container {
+    height: 760px;
+    align-items: flex-start;
+    padding: 10px 0;
+    .contentWidth {
+      width: 90%;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-gap: 20px;
+      .infoContainer {
+        .contactTitle {
+          font-size: 1.3rem;
+          padding: 10px 0 16px;
+        }
+        .phoneContainer,
+        .mailContainer {
+          .contactContent {
+            font-size: 12px;
+            & i {
+              font-size: 1.2rem;
+              line-height: 1.2rem;
+            }
+          }
+        }
+
+        .buttonsContainer {
+          width: 85%;
+          padding: 10px 0 40px;
+          .ButtonCV {
+            width: 100px;
+            font-size: 13px;
+            line-height: 15px;
+          }
+        }
+      }
+      .socialLinks {
+        & i {
+          line-height: 31px;
+          font-size: 31px;
+          padding: 10px 15px;
+          cursor: pointer;
+          &:hover,
+          &:focus,
+          &:active {
+            font-size: 31px;
+          }
+        }
+      }
+      .copyright {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+@media (max-width: 1024px) and (min-width: 960px) and (orientation: landscape) {
+  .container {
+    height: 280px;
+    align-items: flex-st art;
+    padding: 10px 0;
+    .contentWidth {
+      width: 80%;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-gap: 40px;
+      .infoContainer {
+        .contactTitle {
+          font-size: 1.4rem;
+          padding: 10px 0 16px;
+        }
+        .phoneContainer,
+        .mailContainer {
+          .contactContent {
+            font-size: 12px;
+            & i {
+              font-size: 1.2rem;
+              line-height: 1.2rem;
+            }
+          }
+        }
+
+        .buttonsContainer {
+          width: 90%;
+          padding: 10px 0 40px;
+          .ButtonCV {
+            width: 100px;
+            font-size: 13px;
+            line-height: 15px;
+          }
+        }
+      }
+      .socialLinks {
+        & i {
+          line-height: 25px;
+          font-size: 25px;
+          padding: 10px 15px;
+          cursor: pointer;
+          &:hover,
+          &:focus,
+          &:active {
+            font-size: 25px;
+          }
+        }
+      }
+      .copyright {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+@media (max-width: 1365px) and (min-width: 1025px) and (orientation: landscape) {
+  .container {
+    height: 280px;
+    align-items: flex-start;
+    padding: 10px 0;
+    .contentWidth {
+      width: 90%;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-gap: 20px;
+      .infoContainer {
+        .contactTitle {
+          font-size: 1.4rem;
+          padding: 10px 0 16px;
+        }
+        .phoneContainer,
+        .mailContainer {
+          .contactContent {
+            font-size: 12px;
+            & i {
+              font-size: 1.2rem;
+              line-height: 1.2rem;
+            }
+          }
+        }
+
+        .buttonsContainer {
+          width: 60%;
+          padding: 10px 0 40px;
+          .ButtonCV {
+            width: 100px;
+            font-size: 13px;
+            line-height: 15px;
+          }
+        }
+      }
+      .socialLinks {
+        & i {
+          line-height: 31px;
+          font-size: 31px;
+          padding: 10px 15px;
+          cursor: pointer;
+          &:hover,
+          &:focus,
+          &:active {
+            font-size: 31px;
+          }
+        }
+      }
+      .copyright {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+@media (max-width: 1370px) and (min-width: 1365px) and (orientation: landscape) {
+  .container {
+    height: 430px;
+    align-items: flex-start;
+    padding: 10px 0;
+    .contentWidth {
+      width: 80%;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-gap: 20px;
+      .infoContainer {
+        .contactTitle {
+          font-size: 1.4rem;
+          padding: 10px 0 16px;
+        }
+        .phoneContainer,
+        .mailContainer {
+          .contactContent {
+            font-size: 12px;
+            & i {
+              font-size: 1.2rem;
+              line-height: 1.2rem;
+            }
+          }
+        }
+
+        .buttonsContainer {
+          width: 60%;
+          padding: 10px 0 40px;
+          .ButtonCV {
+            width: 100px;
+            font-size: 13px;
+            line-height: 15px;
+          }
+        }
+      }
+      .socialLinks {
+        & i {
+          line-height: 31px;
+          font-size: 31px;
+          padding: 10px 15px;
+          cursor: pointer;
+          &:hover,
+          &:focus,
+          &:active {
+            font-size: 31px;
+          }
+        }
+      }
+      .copyright {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,654 @@
+@import '../../assets/fonts';
+@import '../../assets//styles/variables.scss';
+
+.label {
+  display: none;
+}
+
+.container {
+  width: 100%;
+  background-color: #16222a;
+  .contactHeader {
+    display: flex;
+    background-color: #16222a;
+    align-items: center;
+    justify-content: center;
+    padding: 45px 0;
+    .contactTitle {
+      font-family: $thirdFont;
+      margin: 0;
+      color: white;
+      font-size: 3.3rem;
+      letter-spacing: 1px;
+    }
+  }
+  .contactBackground {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: #283d4b;
+    padding: 70px 0 10px;
+    .contactSection {
+      width: 100%;
+      background: #283d4b;
+      text-align: center;
+      overflow: hidden;
+      .contactSubheader {
+        font-family: $secondFont;
+        font-weight: bold;
+        color: black;
+        font-size: 2.8rem;
+        margin: 0;
+        padding: 30px 0 30px;
+        background-color: rgba(255, 255, 255, 0.6);
+      }
+
+      .contactForm {
+        display: flex;
+        height: 660px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 20px 0 0;
+        background: transparent;
+        overflow: hidden;
+        .errorContainer {
+          height: 0;
+          transition: height 0.66s ease-out;
+          .errorContent {
+            margin: 0;
+            font-family: $secondFont;
+            text-align: center;
+            font-size: 1rem;
+            line-height: 1.1rem;
+            letter-spacing: 1px;
+            color: rgba(191, 63, 63, 1);
+          }
+        }
+        .col {
+          float: left;
+          width: 30%;
+          margin: 20px 0;
+          position: relative;
+          font-weight: 300;
+          overflow-x: hidden;
+          .effect {
+            font-family: $secondFont;
+            border: 1px solid #eee;
+            border-radius: 5px;
+            width: 100%;
+            background-color: transparent;
+            color: white;
+            padding: 20px;
+            letter-spacing: 1px;
+            font-size: 1rem;
+            line-height: 1rem;
+            &:hover:not(&:focus),
+            &:active {
+              cursor: pointer;
+            }
+
+            &::placeholder {
+              font-family: $secondFont;
+              font-size: 1.1rem;
+              color: #eee;
+              font-weight: 300;
+              opacity: 0.5;
+            }
+
+            &:-ms-input-placeholder {
+              font-family: $secondFont;
+              font-size: 1.1rem;
+              color: #eee;
+              font-weight: 300;
+              opacity: 0.5;
+            }
+
+            &::-ms-input-placeholder {
+              font-family: $secondFont;
+              font-size: 1.1rem;
+              color: #eee;
+              font-weight: 300;
+              opacity: 0.5;
+            }
+          }
+          .effect ~ .focusBorder:before,
+          .effect ~ .focusBorder:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            top: 0;
+            right: 0;
+            width: 0;
+            height: 2px;
+            background-color: #16222a;
+            transition: 0.2s;
+            transition-delay: 0.2s;
+          }
+          .effect ~ .focusBorder:after {
+            top: auto;
+            bottom: 0;
+            right: auto;
+            left: 0;
+            transition-delay: 0.6s;
+          }
+          .effect ~ .focusBorder i:before,
+          .effect ~ .focusBorder i:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 2px;
+            height: 0;
+            background-color: #16222a;
+            transition: 0.2s;
+          }
+          .effect ~ .focusBorder i:after {
+            left: auto;
+            right: 0;
+            top: auto;
+            bottom: 0px;
+            transition-delay: 0.4s;
+          }
+          .effect:focus ~ .focusBorder:before,
+          .effect:focus ~ .focusBorder:after {
+            width: 100%;
+            transition: 0.2s;
+            transition-delay: 0.6s;
+          }
+
+          .effect:focus ~ .focusBorder:after {
+            transition-delay: 0.2s;
+          }
+          .effect:focus ~ .focusBorder i:before,
+          .effect:focus ~ .focusBorder i:after {
+            height: 100%;
+            transition: 0.2s;
+          }
+          .effect:focus ~ .focusBorder i:after {
+            transition-delay: 0.4s;
+          }
+        }
+
+        .buttonsContainer {
+          display: grid;
+          grid-template-columns: 140px 120px;
+          padding: 25px 0 0;
+          grid-gap: 40px;
+
+          .formButton {
+            font-family: $secondFont;
+            font-weight: 300;
+            background: transparent;
+            border: 2px solid #eee;
+            border-radius: 20px;
+            color: #eee;
+            padding: 20px 0px;
+            font-size: 0.9rem;
+            line-height: 0.9rem;
+            letter-spacing: 1px;
+            transition: 0.7s;
+            outline: none;
+
+            &:hover,
+            &:active {
+              cursor: pointer;
+              color: black;
+              background-color: #eee;
+              font-size: 0.8rem;
+              font-weight: bold;
+              border: 2px solid black;
+              outline: none;
+            }
+          }
+        }
+      }
+
+      .confirmationContainer {
+        height: 0;
+        z-index: 70;
+        transition: height 0.6s ease-out;
+        p {
+          font-family: $thirdFont;
+          line-height: 22px;
+          color: rgb(37, 133, 50);
+          font-size: 18px;
+          padding-top: 20px;
+          &.confirmationMessage {
+            color: rgb(37, 133, 50);
+          }
+          &.errorMessage {
+            color: rgba(191, 63, 63, 1);
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 320px) and (max-aspect-ratio: 13/9) {
+  .container {
+    width: 100%;
+    .contactHeader {
+      .contactTitle {
+        letter-spacing: 1px;
+        font-size: 1.9rem;
+      }
+    }
+    .contactBackground {
+      width: 100%;
+      padding: 20px 0 20px;
+      .contactSection {
+        border-radius: 0;
+        width: 100% !important;
+        border-left: none;
+        border-right: none;
+        .contactForm {
+          padding: 20px 0 60px;
+          width: 100%;
+          .col {
+            float: left;
+            width: 90%;
+            .effect {
+              font-size: 0.8rem;
+              line-height: 1rem;
+              &::placeholder {
+                font-size: 0.9rem;
+              }
+              &:-ms-input-placeholder {
+                font-size: 0.9rem;
+              }
+
+              &::-ms-input-placeholder {
+                font-size: 0.9rem;
+              }
+            }
+          }
+          .buttonsContainer {
+            grid-gap: 20px;
+            .formButton {
+              padding: 20px 0px;
+              font-size: 0.8rem;
+            }
+          }
+        }
+        .confirmationMessage {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 414px) and (min-width: 321px) and (max-aspect-ratio: 13/9) {
+  .container {
+    width: 100%;
+    .contactHeader {
+      .contactTitle {
+        letter-spacing: 1px;
+        font-size: 1.9rem;
+      }
+    }
+    .contactBackground {
+      padding: 20px 0;
+      .contactSection {
+        border-radius: 0;
+        width: 100% !important;
+        .contactForm {
+          padding: 20px 0 20px;
+          width: 100%;
+          .col {
+            float: left;
+            width: 80%;
+            input[type='text'],
+            select:focus,
+            .effect:focus {
+              font-size: 1rem;
+              line-height: 1rem;
+              &::placeholder {
+                font-size: 1rem;
+              }
+              &:-ms-input-placeholder {
+                font-size: 1rem;
+              }
+
+              &::-ms-input-placeholder {
+                font-size: 1rem;
+              }
+            }
+          }
+          .buttonsContainer {
+            grid-gap: 20px;
+            .formButton {
+              padding: 20px 0px;
+              font-size: 0.8rem;
+            }
+          }
+        }
+        .confirmationMessage {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
+
+@include breakpoint-only('xs') {
+  .container {
+    .contactHeader {
+      .contactTitle {
+        letter-spacing: 1px;
+        font-size: 1.9rem;
+      }
+    }
+    .contactBackground {
+      padding: 20px 0;
+      .contactSection {
+        border-radius: 0;
+        width: 80%;
+        .contactSubheader {
+          font-size: 1.5rem;
+          padding: 15px 0;
+        }
+        .contactForm {
+          padding: 20px 0 60px;
+          .col {
+            float: left;
+            width: 80%;
+            .effect {
+              font-size: 0.8rem;
+              line-height: 1rem;
+              &::placeholder {
+                font-size: 0.9rem;
+              }
+              &:-ms-input-placeholder {
+                font-size: 0.9rem;
+              }
+
+              &::-ms-input-placeholder {
+                font-size: 0.9rem;
+              }
+            }
+          }
+          .buttonsContainer {
+            grid-gap: 20px;
+            .formButton {
+              padding: 20px 0px;
+              font-size: 0.8rem;
+            }
+          }
+        }
+        .confirmationMessage {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
+@include breakpoint-only('sm') {
+  .container {
+    .contactHeader {
+      .contactTitle {
+        letter-spacing: 1px;
+        font-size: 1.9rem;
+      }
+    }
+    .contactBackground {
+      padding: 15px 0 20px;
+      .contactSection {
+        border-radius: 0;
+        width: 70%;
+        .contactSubheader {
+          font-size: 1.5rem;
+          padding: 15px 0;
+        }
+        .contactForm {
+          padding: 20px 0 60px;
+          .col {
+            float: left;
+            width: 80%;
+            input[type='text'],
+            textarea,
+            select:focus {
+              font-size: 1rem;
+              line-height: 1rem;
+              &::placeholder {
+                font-size: 1rem;
+              }
+              &:-ms-input-placeholder {
+                font-size: 1rem;
+              }
+
+              &::-ms-input-placeholder {
+                font-size: 1rem;
+              }
+            }
+          }
+          .buttonsContainer {
+            grid-gap: 20px;
+            .formButton {
+              padding: 20px 0px;
+              font-size: 0.8rem;
+            }
+          }
+        }
+        .confirmationMessage {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+@include breakpoint-only('md') {
+  .container {
+    .contactHeader {
+      .contactTitle {
+        letter-spacing: 1px;
+        font-size: 1.9rem;
+      }
+    }
+    .contactBackground {
+      .contactSection {
+        border-radius: 0;
+        width: 60%;
+        .contactSubheader {
+          font-size: 1.8rem;
+          padding: 22px 0;
+        }
+        .contactForm {
+          padding: 30px 0 60px;
+          .col {
+            width: 60%;
+            .effect {
+              font-size: 1rem;
+              line-height: 1.2rem;
+              &::placeholder {
+                font-size: 1.2rem;
+              }
+              &:-ms-input-placeholder {
+                font-size: 1.2rem;
+              }
+
+              &::-ms-input-placeholder {
+                font-size: 1.2rem;
+              }
+            }
+          }
+          .buttonsContainer {
+            grid-gap: 40px;
+            .formButton {
+              padding: 20px 0px;
+              font-size: 0.9rem;
+            }
+          }
+        }
+        .confirmationMessage {
+          font-size: 19px;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 1280px) and (min-width: 960px) and (orientation: portrait) {
+  .container {
+    min-height: 960px;
+    .contactHeader {
+      .contactTitle {
+        letter-spacing: 1px;
+        font-size: 1.9rem;
+      }
+    }
+    .contactBackground {
+      padding: 15px 0 20px;
+      .contactSection {
+        border-radius: 0;
+        width: 60%;
+        .contactSubheader {
+          font-size: 1.8rem;
+          padding: 22px 0;
+        }
+        .contactForm {
+          padding: 30px 0 60px;
+          height: 700px;
+          .col {
+            width: 80%;
+            .effect {
+              font-size: 1rem;
+              line-height: 1.2rem;
+              &::placeholder {
+                font-size: 1.2rem;
+              }
+              &:-ms-input-placeholder {
+                font-size: 1.2rem;
+              }
+
+              &::-ms-input-placeholder {
+                font-size: 1.2rem;
+              }
+            }
+          }
+          .buttonsContainer {
+            padding: 20px 0 0px;
+            grid-gap: 40px;
+            .formButton {
+              padding: 20px 0px;
+              font-size: 0.9rem;
+            }
+          }
+        }
+        .confirmationMessage {
+          font-size: 19px;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 1024px) and (min-width: 960px) and (orientation: landscape) {
+  .container {
+    min-height: 768px;
+    .contactHeader {
+      .contactTitle {
+        letter-spacing: 1px;
+        font-size: 1.9rem;
+      }
+    }
+    .contactBackground {
+      padding: 20px 0;
+      .contactSection {
+        border-radius: 0;
+        width: 60%;
+        .contactSubheader {
+          font-size: 1.8rem;
+          padding: 22px 0;
+        }
+        .contactForm {
+          padding: 30px 0 60px;
+          height: 700px;
+          .col {
+            width: 80%;
+            .effect {
+              font-size: 1rem;
+              line-height: 1.2rem;
+              &::placeholder {
+                font-size: 1.2rem;
+              }
+              &:-ms-input-placeholder {
+                font-size: 1.2rem;
+              }
+
+              &::-ms-input-placeholder {
+                font-size: 1.2rem;
+              }
+            }
+          }
+          .buttonsContainer {
+            padding: 20px 0 0px;
+            grid-gap: 40px;
+            .formButton {
+              padding: 20px 0px;
+              font-size: 0.9rem;
+            }
+          }
+        }
+        .confirmationMessage {
+          font-size: 19px;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 1370px) and (min-width: 1025px) and (orientation: landscape) {
+  .container {
+    min-height: 1000px;
+    .contactHeader {
+      .contactTitle {
+        letter-spacing: 1px;
+        font-size: 1.9rem;
+      }
+    }
+    .contactBackground {
+      padding: 20px 0;
+      .contactSection {
+        border-radius: 0;
+        width: 100%;
+        .contactSubheader {
+          font-size: 1.8rem;
+          padding: 22px 0;
+        }
+        .contactForm {
+          padding: 30px 0 60px;
+          height: 700px;
+          .col {
+            width: 40%;
+            .effect {
+              font-size: 1rem;
+              line-height: 1.2rem;
+              &::placeholder {
+                font-size: 1.2rem;
+              }
+              &:-ms-input-placeholder {
+                font-size: 1.2rem;
+              }
+
+              &::-ms-input-placeholder {
+                font-size: 1.2rem;
+              }
+            }
+          }
+          .buttonsContainer {
+            padding: 10px 0 0px;
+            grid-gap: 40px;
+            .formButton {
+              padding: 20px 0px;
+              font-size: 0.9rem;
+            }
+          }
+        }
+        .confirmationMessage {
+          font-size: 19px;
+        }
+      }
+    }
+  }
+}

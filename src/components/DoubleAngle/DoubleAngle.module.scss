@@ -1,0 +1,64 @@
+@import "../../assets/styles/variables.scss";
+
+@keyframes doubleArrow {
+  0% {
+    transform: translateY(7px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(7px);
+  }
+}
+@-webkit-keyframes doubleArrow {
+  0% {
+    transform: translateY(7px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(7px);
+  }
+}
+
+.doubleAngle {
+  padding: 15px 10px 25px;
+  i {
+    color: black;
+    font-size: 70px;
+    animation: doubleArrow 0.5s infinite ease-in-out;
+
+    &:hover {
+      color: rgba(0, 0, 0, 0.4);
+      cursor: pointer;
+    }
+  }
+}
+
+@media (max-width: 414px) and (orientation: portrait) {
+  .doubleAngle {
+    padding: 8px 0 15px;
+    i {
+      font-size: 55px;
+    }
+  }
+}
+@include breakpoint-only("xs") {
+  .doubleAngle {
+    padding: 8px 0 15px;
+    i {
+      font-size: 55px;
+    }
+  }
+}
+
+@include breakpoint-only("sm") {
+  .doubleAngle {
+    padding: 8px 0 15px;
+    i {
+      font-size: 55px;
+    }
+  }
+}
