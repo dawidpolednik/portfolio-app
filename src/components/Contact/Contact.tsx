@@ -1,3 +1,5 @@
+'use client';
+
 import axios from 'axios';
 import { Form, Formik, FormikProps } from 'formik';
 import React, { FC } from 'react';

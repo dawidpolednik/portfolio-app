@@ -1,5 +1,5 @@
+'use client';
 import React, { useMemo } from 'react';
-
 import { DoubleAngle } from '../DoubleAngle/DoubleAngle';
 import Project from './Project';
 import styles from './Projects.module.scss';
@@ -11,7 +11,7 @@ const Projects = () => {
   const projects: Project[] = [
     {
       id: 1,
-      image: require('../../img/delfinagram.png'),
+      image: require('~/images/delfinagram.png'),
       title: t('projectsSection.delfinagram.header'),
       description: t('projectsSection.delfinagram.description'),
       tools:
@@ -20,7 +20,7 @@ const Projects = () => {
     },
     {
       id: 2,
-      image: require('../../img/code.PNG'),
+      image: require('~/images/code.PNG'),
       title: t('projectsSection.detectLabelsComparison.header'),
       description: t('projectsSection.detectLabelsComparison.description'),
       tools:
@@ -29,7 +29,7 @@ const Projects = () => {
     },
     {
       id: 3,
-      image: require('../../img/currencyConverter.png'),
+      image: require('~/images/currencyConverter.png'),
       title: t('projectsSection.currencyConverter.header'),
       description: t('projectsSection.currencyConverter.description'),
       tools: 'React, Redux, SASS(SCSS) , ES6, MaterialUI, GitKraken, ',
@@ -38,7 +38,7 @@ const Projects = () => {
     },
     {
       id: 4,
-      image: require('../../img/citiesSearcher.png'),
+      image: require('~/images/citiesSearcher.png'),
       title: t('projectsSection.citiesSearcher.header'),
       description: t('projectsSection.citiesSearcher.description'),
       tools: 'React, Redux, SASS(SCSS) , ES6, MaterialUI, GitKraken, ',
@@ -47,7 +47,7 @@ const Projects = () => {
     },
     {
       id: 5,
-      image: require('../../img/amongUs.PNG'),
+      image: require('~/images/amongUs.PNG'),
       title: t('projectsSection.amongUs.header'),
       description: t('projectsSection.amongUs.description'),
       tools: 'Vanilla JS, ES6, TypeScript, SASS(SCSS) , Parcel',
@@ -62,11 +62,11 @@ const Projects = () => {
           <Project
             key={id}
             id={id}
-            imageRef={image}
+            image={image}
             title={title}
             description={description}
             tools={tools}
-            link={gitHub}
+            gitHub={gitHub}
             liveDemo={liveDemo}
           />
         )

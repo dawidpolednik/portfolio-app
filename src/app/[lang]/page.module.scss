@@ -1,0 +1,154 @@
+@import '../../assets/fonts.scss';
+@import '../../assets/styles/variables.scss';
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: 'Roboto Slab', serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.bgImage {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-image: url('./img/tlo1.jpg');
+  min-height: 1080px;
+  width: 100%;
+  background-size: cover !important;
+  background-repeat: no-repeat;
+  filter: brightness(0.8);
+  overflow: hidden;
+  position: relative;
+}
+
+.toolbar {
+  font-family: $secondFont;
+  display: flex;
+  width: 100%;
+  height: 90px;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 15px 0;
+  padding-right: 18%;
+  filter: brightness(1);
+  .navigationList {
+    .navigationItem {
+      text-decoration: none;
+      color: white;
+      font-size: 1.5rem;
+      padding: 0 10px;
+      &:hover,
+      &:active,
+      &:focus {
+        cursor: pointer;
+        opacity: 0.4;
+      }
+    }
+  }
+}
+.container {
+  max-width: 1180px;
+  width: 100%;
+  margin: auto 0;
+}
+@media (max-width: 330px) and (max-aspect-ratio: 13/9) {
+  .bgImage {
+    min-height: 600px;
+  }
+
+  .toolbar {
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 0;
+    .navigationList {
+      .navigationItem {
+        font-size: 0.6rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 414px) and (min-width: 331px) and (max-aspect-ratio: 13/9) {
+  .bgImage {
+    min-height: 700px;
+  }
+  .toolbar {
+    height: 60px;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+    .navigationList {
+      .navigationItem {
+        font-size: 0.8rem;
+      }
+    }
+  }
+}
+@include breakpoint-only('xs') {
+  .bgImage {
+    min-height: 320px;
+  }
+  .toolbar {
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+    .navigationList {
+      .navigationItem {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+@include breakpoint-only('sm') {
+  .bgImage {
+    min-height: 360px;
+  }
+  .toolbar {
+    align-items: center;
+    justify-content: center;
+    padding: 50px 0;
+    .navigationList {
+      .navigationItem {
+        text-decoration: none;
+        color: white;
+        font-size: 1.5rem;
+        padding: 0 10px;
+        z-index: 99;
+        &:hover {
+          cursor: pointer;
+          opacity: 0.4;
+        }
+      }
+    }
+  }
+}
+@include breakpoint-only('md') {
+  .bgImage {
+    min-height: 768px;
+  }
+  .toolbar {
+    align-items: center;
+    justify-content: center;
+    padding: 50px 0;
+    .navigationList {
+      .navigationItem {
+        font-size: 1.3rem;
+      }
+    }
+  }
+}
