@@ -1,10 +1,10 @@
 @import '../../assets/fonts';
-@import '../../assets//styles/variables.scss';
+@import '../../assets/styles/variables.scss';
 
 .aboutContainer {
   display: flex;
   justify-content: center;
-  background-image: linear-gradient(black, black), url('../../img/weights.jpg');
+  background-image: linear-gradient(black, black), url('../../../public/images/weights.jpg');
   background-blend-mode: saturation;
   background-position: center;
   background-attachment: fixed;

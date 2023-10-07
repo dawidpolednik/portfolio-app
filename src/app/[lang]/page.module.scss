@@ -1,29 +1,12 @@
 @import '../../assets/fonts.scss';
 @import '../../assets/styles/variables.scss';
-* {
-  margin: 0;
-  padding: 0;
-  -webkit-tap-highlight-color: transparent;
-}
 
-html {
-  box-sizing: border-box;
-  font-family: 'Roboto Slab', serif;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 
 .bgImage {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  background-image: url('./img/tlo1.jpg');
+  background-image: url('../../../public/images/tlo1.jpg');
   min-height: 1080px;
   width: 100%;
   background-size: cover !important;

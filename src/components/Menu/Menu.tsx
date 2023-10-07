@@ -2,7 +2,6 @@ import React, { FC, useEffect, useMemo, useRef, useCallback } from 'react';
 import styles from './Menu.module.scss';
 import { CloseIcon } from './CloseIcon/CloseIcon';
 import ReactDOM from 'react-dom';
-import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-scroll';
 
@@ -29,13 +28,13 @@ export const Menu: FC<MenuProps> = ({ isOpen, onClose }) => {
     { id: 6, name: t('menuOptions.contact'), toNavigate: 'contact' },
   ];
 
-  useEffect(() => {
-    if (isOpen) disableBodyScroll(menuRef.current);
-  }, [isOpen]);
+  // useEffect(() => {
+  //   if (isOpen) disableBodyScroll(menuRef.current);
+  // }, [isOpen]);
 
   const handleOnClose = useCallback(() => {
     onClose();
-    enableBodyScroll(menuRef.current);
+    // enableBodyScroll(menuRef.current);
   }, [onClose]);
 
   const renderMenu = useMemo(
@@ -82,6 +81,6 @@ export const Menu: FC<MenuProps> = ({ isOpen, onClose }) => {
         {renderMenu}
       </div>
     </div>,
-    document.getElementById('portal')
+    document.getElementById('portal') as any
   );
 };

@@ -49,7 +49,7 @@ const Contact: FC = () => {
                 setStatus({
                   error: t('contactSection.errorMessages.requestRejected'),
                 });
-                setErrors(error);
+                setErrors(error as any);
               } finally {
                 setSubmitting(false);
               }

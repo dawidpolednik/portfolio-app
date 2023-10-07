@@ -27,29 +27,29 @@ const Footer = () => {
             </p>
           </div>
 
-          <div className={styles.buttonsContainer}>
+          {/* <div className={styles.buttonsContainer}>
             <a
-              href={require('../../assets/cv/CV(pl).pdf')}
+              href={require('@/assets/cv/CV(pl).pdf')}
               download="DawidPolednik(CV-PL)"
               className={styles.ButtonCV}
             >
               CV PL
             </a>
             <a
-              href={require('../../assets/cv/CV(ang).pdf')}
+              href={require('@/assets/cv/CV(ang).pdf')}
               download="DawidPolednik(CV-ANG)"
               className={styles.ButtonCV}
             >
               CV ANG
             </a>
-          </div>
+          </div> */}
         </div>
         <div className={styles.socialLinks}>
           {socialMediaData.map(({ id, href, className }) => (
             <SocialLinks key={id} href={href} className={className} />
           ))}
         </div>
-        <p className={styles.copyright}>&#169; 2019 Dawid Polednik</p>
+        <p className={styles.copyright}>&#169; 2019-2023 Dawid Polednik</p>
       </div>
     </footer>
   );

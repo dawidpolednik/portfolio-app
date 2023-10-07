@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 
 export const useEscape = (onEscape: () => void) => {
   useEffect(() => {
-    const handleEsc = event => {
+    const handleEsc = (event: { key: string }) => {
       if (event.key === 'Escape') onEscape();
     };
     window.addEventListener('keydown', handleEsc);

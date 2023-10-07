@@ -1,9 +1,9 @@
 import React, { FC, useMemo } from 'react';
-import { LanguageOptions } from '../../App';
 import styles from './LanguageSwitcher.module.scss';
 import { useTranslation } from 'react-i18next';
+
 interface LanguageSwitcherProps {
-  changeLanguage: (lng: LanguageOptions) => void;
+  changeLanguage: (lng: 'pl' | 'en') => void;
 }
 
 export const LanguageSwitcher: FC<LanguageSwitcherProps> = ({
