@@ -1,4 +1,3 @@
-'use client';
 import { FC } from 'react';
 import { DoubleAngle } from '../DoubleAngle/DoubleAngle';
 import styles from './AboutMe.module.scss';

@@ -1,4 +1,3 @@
-'use client';
 import { FC, useMemo } from 'react';
 // import ScrollAnimation from "react-animate-on-scroll";
 import { useTranslation } from 'react-i18next';

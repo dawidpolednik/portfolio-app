@@ -1,9 +1,13 @@
-'use client';
 import React, { useMemo } from 'react';
 import { DoubleAngle } from '../DoubleAngle/DoubleAngle';
 import Project from './Project';
 import styles from './Projects.module.scss';
 import { useTranslation } from 'react-i18next';
+import DelfinagramImage from '~/images/delfinagram.png';
+import ListingCodeImage from '~/images/code.png';
+import CurrencyConverterImage from '~/images/currencyConverter.png';
+import CitiesSearcherImage from '~/images/citiesSearcher.png';
+import AmongUsImage from '~/images/amongUs.png';
 
 const Projects = () => {
   const { t } = useTranslation();
@@ -11,7 +15,7 @@ const Projects = () => {
   const projects: Project[] = [
     {
       id: 1,
-      image: require('~/images/delfinagram.png'),
+      image: DelfinagramImage.src,
       title: t('projectsSection.delfinagram.header'),
       description: t('projectsSection.delfinagram.description'),
       tools:
@@ -20,7 +24,7 @@ const Projects = () => {
     },
     {
       id: 2,
-      image: require('~/images/code.PNG'),
+      image: ListingCodeImage.src,
       title: t('projectsSection.detectLabelsComparison.header'),
       description: t('projectsSection.detectLabelsComparison.description'),
       tools:
@@ -29,7 +33,7 @@ const Projects = () => {
     },
     {
       id: 3,
-      image: require('~/images/currencyConverter.png'),
+      image: CurrencyConverterImage.src,
       title: t('projectsSection.currencyConverter.header'),
       description: t('projectsSection.currencyConverter.description'),
       tools: 'React, Redux, SASS(SCSS) , ES6, MaterialUI, GitKraken, ',
@@ -38,7 +42,7 @@ const Projects = () => {
     },
     {
       id: 4,
-      image: require('~/images/citiesSearcher.png'),
+      image: CitiesSearcherImage.src,
       title: t('projectsSection.citiesSearcher.header'),
       description: t('projectsSection.citiesSearcher.description'),
       tools: 'React, Redux, SASS(SCSS) , ES6, MaterialUI, GitKraken, ',
@@ -47,7 +51,7 @@ const Projects = () => {
     },
     {
       id: 5,
-      image: require('~/images/amongUs.PNG'),
+      image: AmongUsImage.src,
       title: t('projectsSection.amongUs.header'),
       description: t('projectsSection.amongUs.description'),
       tools: 'Vanilla JS, ES6, TypeScript, SASS(SCSS) , Parcel',
@@ -69,13 +73,13 @@ const Projects = () => {
             gitHub={gitHub}
             liveDemo={liveDemo}
           />
-        )
+        ),
       ),
-    [projects]
+    [projects],
   );
 
   return (
-    <section className={styles.container} id="projects">
+    <section className={styles.container} id='projects'>
       <div className={styles.projectsHeader}>
         <h2 className={styles.projectsTitle}>{t('projectsSection.header')}</h2>
       </div>
@@ -83,8 +87,8 @@ const Projects = () => {
         <div className={styles.projectsSection}>{renderProjects}</div>
       </div>
       <div className={styles.angleContainer}>
-        <DoubleAngle subPage="contact" />
-        <DoubleAngle onUp={true} subPage="technologies" />
+        <DoubleAngle subPage='contact' />
+        <DoubleAngle onUp={true} subPage='technologies' />
       </div>
     </section>
   );

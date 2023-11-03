@@ -1,4 +1,3 @@
-'use client';
 import React from 'react';
 import styles from './Footer.module.scss';
 import { socialMediaData } from '../SocialMedia/data';
@@ -27,8 +26,8 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* <div className={styles.buttonsContainer}>
-            <a
+          <div className={styles.buttonsContainer}>
+            {/* <a
               href={require('@/assets/cv/CV(pl).pdf')}
               download="DawidPolednik(CV-PL)"
               className={styles.ButtonCV}
@@ -41,8 +40,8 @@ const Footer = () => {
               className={styles.ButtonCV}
             >
               CV ANG
-            </a>
-          </div> */}
+            </a> */}
+          </div>
         </div>
         <div className={styles.socialLinks}>
           {socialMediaData.map(({ id, href, className }) => (

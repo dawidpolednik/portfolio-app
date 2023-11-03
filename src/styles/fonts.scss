@@ -1,0 +1,16 @@
+$homeFont : 'Roboto Slab', serif;
+$secondFont : 'Dosis', sans-serif;
+$thirdFont: 'Montserrat', sans-serif;
+
+@font-face {
+    font-family: 'RobotoSlab-Medium';
+    src: url('../../public/fonts/RobotoSlab-Medium.ttf');
+    font-display: swap;
+    font-style: normal;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+

@@ -1,102 +1,109 @@
+import HtmlIcon from '~/images/html5-icon.svg';
+import CssIcon from '~/images/css-icon.svg';
+import JavascriptIcon from '~/images/js-icon.svg';
+import RwdIcon from '~/images/rwd-icon.svg';
+import ReactIcon from '~/images/react-icon.svg';
+import ReduxIcon from '~/images/redux-icon.svg';
+import TypescriptIcon from '~/images/ts.svg';
+import SassIcon from '~/images/sass-icon.svg';
+import StyledComponentsIcon from '~/images/styled-components-icon.svg';
+import AngularIcon from '~/images/angular-icon.svg';
+import RxJsIcon from '~/images/rxjs.svg';
+
 const technologies: Technology[] = [
   {
     id: 1,
-    image: require('~/images/1.png'),
+    image: HtmlIcon,
     title: 'HTML5',
   },
   {
     id: 2,
-    image: require('~/images/2.png'),
+    image: CssIcon,
     title: 'CSS3',
   },
   {
     id: 3,
-    image: require('~/images/3.png'),
+    image: JavascriptIcon,
     title: 'JavaScript(ES6)',
   },
   {
     id: 4,
-    image: require('~/images/4.png'),
+    image: RwdIcon,
     title: 'RWD',
     description: 'bar',
   },
   {
     id: 5,
-    image: require('~/images/5.svg'),
+    image: ReactIcon,
     title: 'React',
   },
   {
     id: 6,
-    image: require('~/images/6.png'),
+    image: ReduxIcon,
     title: 'Redux',
   },
   {
     id: 7,
-    image: require('~/images/7.svg'),
-    title: 'React-Native',
-  },
-  {
-    id: 8,
-    image: require('~/images/ts.svg'),
+    image: TypescriptIcon,
     title: 'TypeScript',
   },
   {
-    id: 9,
-    image: require('~/images/8.svg'),
+    id: 8,
+    image: SassIcon,
     title: 'Sass(SCSS/LESS)',
   },
   {
-    id: 10,
-    image: require('~/images/styled-components.png'),
+    id: 9,
+    image: StyledComponentsIcon,
     title: 'Styled Components',
   },
   {
-    id: 11,
-    image: require('~/images/13.svg'),
+    id: 10,
+    image: AngularIcon,
     title: 'Angular',
   },
   {
-    id: 12,
-    image: require('~/images/rxjs.svg'),
+    id: 11,
+    image: RxJsIcon,
     title: 'RxJS',
   },
   {
-    id: 13,
+    id: 12,
     image: require('~/images/9.png'),
     title: 'Git',
   },
   {
-    id: 14,
+    id: 13,
     image: require('~/images/11.png'),
     title: 'Gulp',
   },
   {
-    id: 15,
+    id: 14,
     image: require('~/images/12.png'),
     title: 'Scrum',
   },
   {
-    id: 16,
+    id: 15,
     image: require('~/images/gitkraken.svg'),
     title: 'GitKraken',
   },
   {
-    id: 17,
+    id: 16,
     image: require('~/images/webpack.png'),
     title: 'Webpack',
   },
   {
-    id: 18,
+    id: 17,
     image: require('~/images/jest.png'),
     title: 'Jest',
   },
   {
-    id: 19,
+    id: 18,
     image: require('~/images/enzyme.png'),
     title: 'Enzyme',
   },
   {
-    id: 20,
+    id: 19,
     image: require('~/images/vite.svg'),
     title: 'Vite',
   },
@@ -116,7 +123,7 @@ const projects: Project[] = [
   },
   {
     id: 2,
-    image: require('~/images/code.PNG'),
+    image: require('~/images/code.png'),
     title: 'Detect Labels Comparison',
     description:
       'Aplikacja konsolowa Node.js porównująca skuteczności algorytmów etykietowania obrazów w oparciu o usługi 3 najpopularniejszych dostawców chmurowych. Dla danego zbioru testowego usługami  badanymi podczas symulacji to usługi Cognitive Services, Amazon Rekognition oraz Google Cloud Vision. Testowaną funkcjonalnością jest etykietowanie (tagowanie) obrazu.',
@@ -146,7 +153,7 @@ const projects: Project[] = [
   },
   {
     id: 5,
-    image: require('~/images/amongUs.PNG'),
+    image: require('~/images/amongUs.png'),
     title: 'Among Us Memory Game',
     description:
       'Gra wzorowana na jednej z minigier Among Us. Całość projektu zbudowano za pomocą języka Vanilla JS oraz TypeScript.',

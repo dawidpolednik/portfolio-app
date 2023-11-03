@@ -19,6 +19,8 @@ const ProjectFC = ({
 }: ProjectProps) => {
   const { t } = useTranslation();
 
+  console.log('image :>> ', image);
+
   return (
     // <ScrollAnimation
     //   animateIn="fadeInDown"
@@ -28,9 +30,9 @@ const ProjectFC = ({
     //   animateOnce
     // >
     <div className={styles.projectsItem}>
-      <a href={gitHub} target="_blank" rel="noopener noreferrer">
+      <a href={gitHub} target='_blank' rel='noopener noreferrer'>
         <div className={styles.imgContainer}>
-          <Image src={image} className={styles.img} alt="projekt" />
+          <Image src={image} className={styles.img} alt='projekt' />
           <div className={styles.searchIconContainer}>
             <i className={`${styles.searchIcon} ${'fa fa-search-plus'}`}></i>
           </div>
@@ -40,7 +42,7 @@ const ProjectFC = ({
         <h4 className={styles.projectTitle}>{title}</h4>
         <p className={styles.projectDescription}>{description}</p>
         <p className={styles.projectTools}>{`${t(
-          'projectsSection.tools'
+          'projectsSection.tools',
         )} : ${tools}`}</p>
 
         {id !== 2 && id !== 1 ? (
@@ -48,16 +50,16 @@ const ProjectFC = ({
             <a
               className={styles.buttonItem}
               href={gitHub}
-              target="_blank"
-              rel="noopener noreferrer"
+              target='_blank'
+              rel='noopener noreferrer'
             >
               {titleButtons[0]}
             </a>
             <a
               className={styles.buttonItem}
               href={liveDemo}
-              target="_blank"
-              rel="noopener noreferrer"
+              target='_blank'
+              rel='noopener noreferrer'
             >
               {titleButtons[1]}
             </a>
@@ -67,8 +69,8 @@ const ProjectFC = ({
             <a
               className={styles.buttonItem}
               href={gitHub}
-              target="_blank"
-              rel="noopener noreferrer"
+              target='_blank'
+              rel='noopener noreferrer'
             >
               {titleButtons[0]}
             </a>
