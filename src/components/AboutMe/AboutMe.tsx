@@ -1,12 +1,14 @@
 import { FC } from 'react';
 import { DoubleAngle } from '../DoubleAngle/DoubleAngle';
 import styles from './AboutMe.module.scss';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 
 const AboutMe: FC = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('common');
+
+  console.log('t  :>> ', t);
   return (
-    <div className={styles.aboutContainer} id="aboutMe">
+    <div className={styles.aboutContainer} id='aboutMe'>
       <section className={styles.aboutMeSection}>
         <h3 className={styles.title}> {t('aboutMeSection.header')}</h3>
         <p className={styles.subTitle}> {t('aboutMeSection.subHeader')}</p>
@@ -17,8 +19,8 @@ const AboutMe: FC = () => {
         <p>{t('aboutMeSection.fifthParagraph')}</p>
         <p>{t('aboutMeSection.sixthParagraph')}</p>
         <div className={styles.angleContainer}>
-          <DoubleAngle subPage="education" />
-          <DoubleAngle onUp={true} subPage="home" />
+          <DoubleAngle subPage='education' />
+          <DoubleAngle onUp={true} subPage='home' />
         </div>
       </section>
     </div>

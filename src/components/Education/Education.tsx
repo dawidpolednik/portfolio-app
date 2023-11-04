@@ -2,7 +2,7 @@ import styles from './Education.module.scss';
 // import ScrollAnimation from "react-animate-on-scroll";
 import { DoubleAngle } from '../DoubleAngle/DoubleAngle';
 import LifeEvent from './LifeEvent';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 
 const Education = () => {
   const { t } = useTranslation();
@@ -54,7 +54,7 @@ const Education = () => {
 
   return (
     <>
-      <section className={styles.container} id="education">
+      <section className={styles.container} id='education'>
         <div className={styles.educationHeader}>
           <h2 className={styles.educationTitle}>
             {t('educationSection.header')}
@@ -81,8 +81,8 @@ const Education = () => {
         </div>
         {/* </ScrollAnimation> */}
         <div className={styles.angleContainer}>
-          <DoubleAngle subPage="technologies" />
-          <DoubleAngle onUp={true} subPage="aboutMe" />
+          <DoubleAngle subPage='technologies' />
+          <DoubleAngle onUp={true} subPage='aboutMe' />
         </div>
       </section>
     </>

@@ -1,6 +1,6 @@
 import React, { FC, useCallback, useMemo } from 'react';
 import styles from './LanguageSwitcher.module.scss';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
 
 export const LanguageSwitcher: FC = ({}) => {

@@ -76,9 +76,11 @@
           animation: bounce 1s infinite alternate;
           -webkit-animation: bounce 1s infinite alternate;
         }
-        .img {
-          width: auto;
+        svg {
+          width: 80px;
           height: 100%;
+
+      
         }
       }
       .imgHeader {
@@ -87,6 +89,7 @@
         font-size: 1.5rem;
         letter-spacing: 1px;
         padding: 12px;
+        text-align: center;
       }
     }
   }

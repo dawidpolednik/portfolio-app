@@ -1,5 +1,7 @@
 /** @type {import('next').NextConfig} */
 
+const { i18n } = require('./next-i18next.config');
+
 const nextConfig = {
   eslint: {
     dirs: ['src'],
@@ -7,11 +9,7 @@ const nextConfig = {
   output: 'standalone',
   reactStrictMode: true,
   trailingSlash: true,
-  i18n: {
-    locales: ['pl', 'en'],
-    defaultLocale: 'pl',
-    localeDetection: false,
-  },
+  i18n,
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/i,

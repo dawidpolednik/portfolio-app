@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Footer.module.scss';
 import { socialMediaData } from '../SocialMedia/data';
 import SocialLinks from '../SocialMedia/SocialMedia';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -14,14 +14,14 @@ const Footer = () => {
           <h4 className={styles.contactTitle}>{t('footerSection.contact')}</h4>
           <div className={styles.phoneContainer}>
             <p className={styles.contactContent}>
-              <i className="fa fa-phone"></i>
+              <i className='fa fa-phone'></i>
               &nbsp;&nbsp;&nbsp; {t('footerSection.phone')}: +48 530 921 475
             </p>
           </div>
 
           <div className={styles.mailContainer}>
             <p className={styles.contactContent}>
-              <i className="fa fa-envelope"></i>
+              <i className='fa fa-envelope'></i>
               &nbsp;&nbsp;&nbsp; E-mail: dawid.polednik@gmail.com
             </p>
           </div>

@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import { DoubleAngle } from '../DoubleAngle/DoubleAngle';
 import Project from './Project';
 import styles from './Projects.module.scss';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 import DelfinagramImage from '~/images/delfinagram.png';
 import ListingCodeImage from '~/images/code.png';
 import CurrencyConverterImage from '~/images/currencyConverter.png';

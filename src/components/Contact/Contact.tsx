@@ -2,7 +2,7 @@ import axios from 'axios';
 import { Form, Formik, FormikProps } from 'formik';
 import React, { FC } from 'react';
 import * as Yup from 'yup';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 import { DoubleAngle } from '../DoubleAngle/DoubleAngle';
 import styles from './Contact.module.scss';
 import { Error } from './Errors';
@@ -21,7 +21,7 @@ const Contact: FC = () => {
   const { t } = useTranslation();
 
   return (
-    <section className={styles.container} id="contact">
+    <section className={styles.container} id='contact'>
       <div className={styles.contactHeader}>
         <h2 className={styles.contactTitle}>{t('contactSection.header')}</h2>
       </div>
@@ -36,7 +36,7 @@ const Contact: FC = () => {
             })}
             onSubmit={async (
               values,
-              { resetForm, setStatus, setErrors, setSubmitting }
+              { resetForm, setStatus, setErrors, setSubmitting },
             ) => {
               setStatus({ success: false });
               try {
@@ -68,7 +68,7 @@ const Contact: FC = () => {
                   />
                 )}
                 <Input
-                  name="name"
+                  name='name'
                   placeholder={t('contactSection.placeholders.name')}
                   value={values.name}
                   onChange={handleChange}
@@ -81,7 +81,7 @@ const Contact: FC = () => {
                   />
                 )}
                 <Input
-                  name="email"
+                  name='email'
                   placeholder={t('contactSection.placeholders.email')}
                   value={values.email}
                   onChange={handleChange}
@@ -95,7 +95,7 @@ const Contact: FC = () => {
                 )}
 
                 <TextArea
-                  name="message"
+                  name='message'
                   placeholder={t('contactSection.placeholders.message')}
                   value={values.message}
                   onChange={handleChange}
@@ -103,12 +103,12 @@ const Contact: FC = () => {
                 <div className={styles.buttonsContainer}>
                   <input
                     className={styles.formButton}
-                    type="reset"
+                    type='reset'
                     value={`${t('contactSection.buttons.reset')}`}
                   />
                   <input
                     className={styles.formButton}
-                    type="submit"
+                    type='submit'
                     value={`${t('contactSection.buttons.submit')}`}
                   />
                 </div>
@@ -128,7 +128,7 @@ const Contact: FC = () => {
             )}
           />
         </div>
-        <DoubleAngle onUp={true} subPage="projects" />
+        <DoubleAngle onUp={true} subPage='projects' />
       </div>
     </section>
   );

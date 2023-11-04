@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Projects.module.scss';
 // import ScrollAnimation from 'react-animate-on-scroll';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
 
 const titleButtons = ['GitHub', 'Live Demo'];
@@ -32,7 +32,7 @@ const ProjectFC = ({
     <div className={styles.projectsItem}>
       <a href={gitHub} target='_blank' rel='noopener noreferrer'>
         <div className={styles.imgContainer}>
-          <Image src={image} className={styles.img} alt='projekt' />
+          <Image src={image} className={styles.img} alt='project' fill={true} />
           <div className={styles.searchIconContainer}>
             <i className={`${styles.searchIcon} ${'fa fa-search-plus'}`}></i>
           </div>

@@ -2,7 +2,7 @@ import React, { FC, useEffect, useMemo, useRef, useCallback } from 'react';
 import styles from './Menu.module.scss';
 import { CloseIcon } from './CloseIcon/CloseIcon';
 import ReactDOM from 'react-dom';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 import { Link } from 'react-scroll';
 
 interface MenuProps {
@@ -47,7 +47,7 @@ export const Menu: FC<MenuProps> = ({ isOpen, onClose }) => {
                 <Link
                   key={id}
                   className={styles.menuItemContent}
-                  activeClass="active"
+                  activeClass='active'
                   to={toNavigate}
                   spy={true}
                   smooth={true}
@@ -67,7 +67,7 @@ export const Menu: FC<MenuProps> = ({ isOpen, onClose }) => {
         </ul>
       </nav>
     ),
-    [menuItems, handleOnClose]
+    [menuItems, handleOnClose],
   );
 
   if (!isOpen) return null;
@@ -81,6 +81,6 @@ export const Menu: FC<MenuProps> = ({ isOpen, onClose }) => {
         {renderMenu}
       </div>
     </div>,
-    document.getElementById('portal') as any
+    document.getElementById('portal') as any,
   );
 };

@@ -1,6 +1,7 @@
+import { ReactElement } from 'react';
+
 interface Technology {
-  id: number;
   title: string;
-  image: string;
+  icon: ReactElement;
   description?: string;
 }
