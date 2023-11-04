@@ -1,4 +1,3 @@
-import axios from 'axios';
 import { Form, Formik, FormikProps } from 'formik';
 import React, { FC } from 'react';
 import * as Yup from 'yup';
@@ -8,8 +7,7 @@ import styles from './Contact.module.scss';
 import { Error } from './Errors';
 import Input from './Input';
 import TextArea from './TextArea';
-
-const SEND_DATA_URL = 'https://server-nodemailer.herokuapp.com/send';
+import sendMail from '@/service/email-service';
 
 const Contact: FC = () => {
   const initialValues: FormMailerValues = {
@@ -40,7 +38,11 @@ const Contact: FC = () => {
             ) => {
               setStatus({ success: false });
               try {
-                await axios.post<FormMailerValues>(SEND_DATA_URL, values);
+                await sendMail({
+                  name: values.name,
+                  email: values.email,
+                  message: values.message,
+                });
                 resetForm();
                 setStatus({ success: t('contactSection.requestResolved') });
               } catch (error) {

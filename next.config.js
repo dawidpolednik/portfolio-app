@@ -25,6 +25,11 @@ const nextConfig = {
       ],
     });
 
+    config.resolve = {
+      ...config.resolve,
+      fallback: { fs: false, net: false, dns: false },
+    };
+
     // camel-case style names from css modules
     config.module.rules
       .find(({ oneOf }) => !!oneOf)
