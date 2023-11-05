@@ -1,4 +1,5 @@
-@import "../../styles/variables.scss";
+@import '../../styles/variables.scss';
+@import '../../styles/colors.scss';
 
 @keyframes doubleArrow {
   0% {
@@ -25,10 +26,11 @@
 
 .doubleAngle {
   padding: 15px 10px 25px;
+  animation: doubleArrow 0.5s infinite ease-in-out;
   i {
     color: black;
     font-size: 70px;
-    animation: doubleArrow 0.5s infinite ease-in-out;
+   
 
     &:hover {
       color: rgba(0, 0, 0, 0.4);
@@ -45,7 +47,7 @@
     }
   }
 }
-@include breakpoint-only("xs") {
+@include breakpoint-only('xs') {
   .doubleAngle {
     padding: 8px 0 15px;
     i {
@@ -54,7 +56,7 @@
   }
 }
 
-@include breakpoint-only("sm") {
+@include breakpoint-only('sm') {
   .doubleAngle {
     padding: 8px 0 15px;
     i {
@@ -63,8 +65,23 @@
   }
 }
 
-.angle-up {
- width: 60px;
-   
+.doubleAngle {
+  cursor: pointer;
+  svg {
+    width: 70px;
+    height: 70px;
+  }
+
+  &:hover {
+    svg path {
+      fill: $lightTheme;
+    }
+  }
+
+ 
   
+}
+
+.doubleAngle {
+  transform: rotate(180deg);
 }
