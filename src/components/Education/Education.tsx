@@ -3,9 +3,16 @@ import styles from './Education.module.scss';
 import { DoubleAngle } from '../DoubleAngle/DoubleAngle';
 import LifeEvent from './LifeEvent';
 import { useTranslation } from 'next-i18next';
+import { useHandleIdSection } from '@/hooks/useHandleIdSection';
+
+const sectionName: NavigationSectionName = 'education';
 
 const Education = () => {
   const { t } = useTranslation();
+
+  // const { containerRef } = useHandleIdSection({
+  //   sectionName,
+  // });
 
   const lifeEvents: LifeEvent[] = [
     {
@@ -54,7 +61,7 @@ const Education = () => {
 
   return (
     <>
-      <section className={styles.container} id='education'>
+      <section className={styles.container} id={sectionName}>
         <div className={styles.educationHeader}>
           <h2 className={styles.educationTitle}>
             {t('educationSection.header')}

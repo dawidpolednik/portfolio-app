@@ -1,10 +1,30 @@
-$homeFont : 'Roboto Slab', serif;
-$secondFont : 'Dosis', sans-serif;
-$thirdFont: 'Montserrat', sans-serif;
+$homeFont : 'RobotoSlab-Regular', serif;
+$secondFont : 'Dosis-Regular', sans-serif;
+$thirdFont: 'Montserrat-Regular', sans-serif;
 
 @font-face {
-    font-family: 'RobotoSlab-Medium';
-    src: url('../../public/fonts/RobotoSlab-Medium.ttf');
+    font-family: 'RobotoSlab-Regular';
+    src: url('../../public/fonts/RobotoSlab-Regular.ttf');
+    font-display: swap;
+    font-style: normal;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@font-face {
+    font-family: 'Dosis-Regular';
+    src: url('../../public/fonts/Dosis-Regular.ttf');
+    font-display: swap;
+    font-style: normal;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@font-face {
+    font-family: 'Montserrat-Regular';
+    src: url('../../public/fonts/Montserrat-Regular.ttf');
     font-display: swap;
     font-style: normal;
     font-weight: 300;

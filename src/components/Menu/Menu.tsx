@@ -3,9 +3,9 @@ import styles from './Menu.module.scss';
 import { CloseIcon } from './CloseIcon/CloseIcon';
 import ReactDOM from 'react-dom';
 import { useTranslation } from 'next-i18next';
-import Link from 'next/link';
+// import Link from 'next/link';
 import { useRouter } from 'next/router';
-// import { Link } from 'react-scroll';
+import { Link } from 'react-scroll';
 
 interface MenuProps {
   onClose: () => void;
@@ -48,8 +48,7 @@ export const Menu: FC<MenuProps> = ({ isOpen, onClose }) => {
           {menuItems.map(({ id, name, toNavigate }, index) => {
             return (
               <li key={id} className={styles.menuItem}>
-                {/* <Link
-                  key={id}
+                <Link
                   className={styles.menuItemContent}
                   activeClass='active'
                   to={toNavigate}
@@ -62,14 +61,16 @@ export const Menu: FC<MenuProps> = ({ isOpen, onClose }) => {
                   isDynamic={true}
                   ignoreCancelEvents={false}
                   onClick={handleOnClose}
-                > */}
-                <Link
+                >
+                  {name}
+                </Link>
+                {/* <Link
                   key={id}
                   href={`#${toNavigate}`}
                   className={styles.menuItemContent}
                 >
                   {name}
-                </Link>
+                </Link> */}
               </li>
             );
           })}

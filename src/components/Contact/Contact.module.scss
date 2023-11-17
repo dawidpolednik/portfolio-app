@@ -57,6 +57,7 @@
         .errorContainer {
           height: 0;
           transition: height 0.66s ease-out;
+          padding-bottom: 4px;
           .errorContent {
             margin: 0;
             font-family: $secondFont;
@@ -68,10 +69,10 @@
           }
         }
         .col {
-          float: left;
           width: 30%;
           margin: 20px 0;
           position: relative;
+          background: transparent;
           font-weight: 300;
           overflow-x: hidden;
           .effect {
@@ -85,25 +86,16 @@
             letter-spacing: 1px;
             font-size: 1rem;
             line-height: 1rem;
+
+            &:focus {
+              outline: none;
+         
+            }
+
             &:hover:not(&:focus),
             &:active {
               cursor: pointer;
-            }
-
-            &::placeholder {
-              font-family: $secondFont;
-              font-size: 1.1rem;
-              color: #eee;
-              font-weight: 300;
-              opacity: 0.5;
-            }
-
-            &:-ms-input-placeholder {
-              font-family: $secondFont;
-              font-size: 1.1rem;
-              color: #eee;
-              font-weight: 300;
-              opacity: 0.5;
+              
             }
 
             &::-ms-input-placeholder {
@@ -114,61 +106,23 @@
               opacity: 0.5;
             }
           }
-          .effect ~ .focusBorder:before,
-          .effect ~ .focusBorder:after {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            top: 0;
-            right: 0;
-            width: 0;
-            height: 2px;
-            background-color: #16222a;
-            transition: 0.2s;
-            transition-delay: 0.2s;
-          }
-          .effect ~ .focusBorder:after {
-            top: auto;
-            bottom: 0;
-            right: auto;
-            left: 0;
-            transition-delay: 0.6s;
-          }
-          .effect ~ .focusBorder i:before,
-          .effect ~ .focusBorder i:after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 2px;
-            height: 0;
-            background-color: #16222a;
-            transition: 0.2s;
-          }
-          .effect ~ .focusBorder i:after {
-            left: auto;
-            right: 0;
-            top: auto;
-            bottom: 0px;
-            transition-delay: 0.4s;
-          }
-          .effect:focus ~ .focusBorder:before,
-          .effect:focus ~ .focusBorder:after {
-            width: 100%;
-            transition: 0.2s;
-            transition-delay: 0.6s;
+
+    
+
+          &::placeholder {
+            font-family: $secondFont;
+            font-size: 1.1rem;
+            color: #eee;
+            font-weight: 300;
+            opacity: 0.5;
           }
 
-          .effect:focus ~ .focusBorder:after {
-            transition-delay: 0.2s;
-          }
-          .effect:focus ~ .focusBorder i:before,
-          .effect:focus ~ .focusBorder i:after {
-            height: 100%;
-            transition: 0.2s;
-          }
-          .effect:focus ~ .focusBorder i:after {
-            transition-delay: 0.4s;
+          &:-ms-input-placeholder {
+            font-family: $secondFont;
+            font-size: 1.1rem;
+            color: #eee;
+            font-weight: 300;
+            opacity: 0.5;
           }
         }
 
@@ -248,7 +202,7 @@
           padding: 20px 0 60px;
           width: 100%;
           .col {
-            float: left;
+          
             width: 90%;
             .effect {
               font-size: 0.8rem;
@@ -354,7 +308,6 @@
         .contactForm {
           padding: 20px 0 60px;
           .col {
-            float: left;
             width: 80%;
             .effect {
               font-size: 0.8rem;

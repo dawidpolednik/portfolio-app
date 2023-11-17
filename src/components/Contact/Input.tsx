@@ -21,9 +21,7 @@ const Input: FC<InputProps> = ({ name, placeholder, value, onChange }) => {
           value={value}
           onChange={onChange}
         />
-        <span className={style.focusBorder}>
-          <i />
-        </span>
+        <span className='focus-bg' />
       </div>
     </>
   );

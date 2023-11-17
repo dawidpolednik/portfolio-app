@@ -1,5 +1,4 @@
 interface SocialMedium {
-  id: number;
   href: string;
-  className: string;
+  type: 'facebook' | 'linkedin' | 'github' | 'stackoverflow';
 }

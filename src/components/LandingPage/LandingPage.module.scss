@@ -44,33 +44,44 @@
       font-weight: normal;
     }
     .bannerHR {
-      border-top: 5px dotted white;
+      display: block;
+      border-style: dotted none none;
+      border-width: 5px;
+      border-color: white;
       width: 50%;
-      margin: auto;
-      margin-top: 10px;
+      margin: 10px auto auto auto;
+      padding: 0;
     }
     .socialLinks {
       display: flex;
-      justify-content: space-between;
-      width: 50%;
+      align-items: center;
+      justify-content: center;
       margin: auto;
-      padding: 15px 0;
-    }
+      padding: 25px 0 15px;
+      gap: 30px;
 
-    & i {
-      color: white;
-      line-height: 40px;
-      font-size: 40px;
-      padding: 10px 15px;
-      transition-duration: 0.3s;
-      &:hover,
-      &:focus,
-      &:active {
+      svg {
+        width: 40px;
+        height: 40px;
         cursor: pointer;
-        color: #0e76a8;
-        transform: scale(1.25);
+        transition-duration: 0.3s;
+        path {
+          fill: white;
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+          path {
+            fill: #0e76a8;
+          }
+
+          transform: scale(1.1);
+        }
       }
     }
+
+  
   }
 }
 @media screen and (max-width: 320px) and (max-aspect-ratio: 13/9) {
@@ -89,25 +100,19 @@
         font-size: 35px;
       }
       .bannerHR {
-        width: 70%;
+        width: 80%;
+      
       }
       .socialLinks {
-        align-items: center;
-        justify-content: center;
-        width: 90%;
-      }
-      & i {
-        line-height: 32px;
-        font-size: 32px;
-        padding: 7px 12px;
+        gap: 16px;
 
-        &:hover,
-        &:active,
-        &:focus {
-          margin: 0;
-          font-size: 32px;
+        svg {
+          width: 32px;
+          height: 32px;
         }
       }
+
+
     }
   }
 }
@@ -131,20 +136,11 @@
         width: 70%;
       }
       .socialLinks {
-        align-items: center;
-        justify-content: center;
-        width: 90%;
-      }
-      & i {
-        line-height: 32px;
-        font-size: 32px;
-        padding: 7px 12px;
+        gap: 16px;
 
-        &:hover,
-        &:active,
-        &:focus {
-          margin: 0;
-          font-size: 32px;
+        svg {
+          width: 32px;
+          height: 32px;
         }
       }
     }
@@ -167,23 +163,15 @@
         font-size: 43px;
       }
       .bannerHR {
-        width: 50%;
+        width: 70%;
       }
+     
       .socialLinks {
-        align-items: center;
-        justify-content: center;
-        width: 80%;
-      }
-      & i {
-        line-height: 45px;
-        font-size: 45px;
-        padding: 5px 12px;
+        gap: 20px;
 
-        &:hover,
-        &:active,
-        &:focus {
-          margin: 0;
-          font-size: 45px;
+        svg {
+          width: 45px;
+          height: 45px;
         }
       }
     }
@@ -209,20 +197,11 @@
         width: 50%;
       }
       .socialLinks {
-        align-items: center;
-        justify-content: center;
-        width: 80%;
-      }
-      & i {
-        line-height: 45px;
-        font-size: 45px;
-        padding: 5px 12px;
+        gap: 20px;
 
-        &:hover,
-        &:active,
-        &:focus {
-          margin: 0;
-          font-size: 45px;
+        svg {
+          width: 45px;
+          height: 45px;
         }
       }
     }
@@ -251,19 +230,13 @@
         align-items: center;
         justify-content: center;
         width: 90%;
-      }
-      & i {
-        line-height: 55px;
-        font-size: 55px;
-        padding: 5px 12px;
 
-        &:hover,
-        &:active,
-        &:focus {
-          margin: 0;
-          font-size: 55px;
-        }
+          svg {
+        width: 45px;
+        height: 45px;
       }
+      }
+    
     }
   }
 }

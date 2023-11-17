@@ -3,6 +3,8 @@ import styles from './Footer.module.scss';
 import { socialMediaData } from '../SocialMedia/data';
 import SocialLinks from '../SocialMedia/SocialMedia';
 import { useTranslation } from 'next-i18next';
+import EmailIcon from '~/images/email-icon.svg';
+import PhoneIcon from '~/images/phone-icon.svg';
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -14,38 +16,42 @@ const Footer = () => {
           <h4 className={styles.contactTitle}>{t('footerSection.contact')}</h4>
           <div className={styles.phoneContainer}>
             <p className={styles.contactContent}>
-              <i className='fa fa-phone'></i>
+              <PhoneIcon />
               &nbsp;&nbsp;&nbsp; {t('footerSection.phone')}: +48 530 921 475
             </p>
           </div>
 
           <div className={styles.mailContainer}>
             <p className={styles.contactContent}>
-              <i className='fa fa-envelope'></i>
+              <EmailIcon />
               &nbsp;&nbsp;&nbsp; E-mail: dawid.polednik@gmail.com
             </p>
           </div>
 
           <div className={styles.buttonsContainer}>
-            {/* <a
-              href={require('@/assets/cv/CV(pl).pdf')}
-              download="DawidPolednik(CV-PL)"
+            <a
+              href={'/files/CV(pl).pdf'}
+              download='DawidPolednik(CV-PL)'
+              target='_blank'
+              rel='noopener noreferrer'
               className={styles.ButtonCV}
             >
               CV PL
             </a>
             <a
-              href={require('@/assets/cv/CV(ang).pdf')}
-              download="DawidPolednik(CV-ANG)"
+              href={'/files/CV(ang).pdf'}
+              download='DawidPolednik(CV-ANG)'
+              target='_blank'
+              rel='noopener noreferrer'
               className={styles.ButtonCV}
             >
               CV ANG
-            </a> */}
+            </a>
           </div>
         </div>
         <div className={styles.socialLinks}>
-          {socialMediaData.map(({ id, href, className }) => (
-            <SocialLinks key={id} href={href} className={className} />
+          {socialMediaData.map(({ href, type }, idx) => (
+            <SocialLinks key={`${type}-${idx}}`} href={href} type={type} />
           ))}
         </div>
         <p className={styles.copyright}>&#169; 2019-2023 Dawid Polednik</p>

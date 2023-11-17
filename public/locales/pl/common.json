@@ -92,7 +92,7 @@
       "message": "Treść wiadomości..."
     },
     "buttons": {
-      "reset": "Wyczyść formularz",
+      "reset": "Wyczyść",
       "submit": "Wyślij"
     },
     "errorMessages": {

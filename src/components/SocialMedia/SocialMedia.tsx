@@ -1,13 +1,28 @@
-import React, { FC } from 'react';
-interface SocialLinkProps {
-  href: string;
-  className: string;
-}
+import { FC, useMemo } from 'react';
+import FacebookIcon from '~/images/facebook-icon.svg';
+import LinkedinIcon from '~/images/linkedin-icon.svg';
+import GithubIcon from '~/images/github-icon.svg';
+import StackoverflowIcon from '~/images/stackoverflow-icon.svg';
 
-const SocialMedia: FC<SocialLinkProps> = ({ href, className }) => {
+type SocialLinkProps = SocialMedium;
+
+const SocialMedia: FC<SocialLinkProps> = ({ href, type }) => {
+  const icon = useMemo(() => {
+    switch (type) {
+      case 'facebook':
+        return <FacebookIcon />;
+      case 'linkedin':
+        return <LinkedinIcon />;
+      case 'github':
+        return <GithubIcon />;
+      case 'stackoverflow':
+        return <StackoverflowIcon />;
+    }
+  }, [type]);
+
   return (
-    <a href={href} target="_blank" rel="noopener noreferrer">
-      <i className={`${className} `} aria-hidden="true"></i>
+    <a href={href} target='_blank' rel='noopener noreferrer'>
+      {icon}
     </a>
   );
 };

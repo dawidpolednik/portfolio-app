@@ -6,6 +6,7 @@
   display: flex;
   text-align: center;
   justify-content: center;
+  padding: 40px 0;
   .contentWidth {
     width: 70%;
     display: grid;
@@ -29,13 +30,14 @@
       .phoneContainer,
       .mailContainer {
         .contactContent {
-          display: inline-block;
+          display: flex;
+          align-items: center;
           font-size: 15px;
           font-family: $thirdFont;
 
-          & i {
-            font-size: 1.5rem;
-            line-height: 1.5rem;
+          svg {
+            width: 1.5rem;
+            height: 1.5rem;
           }
         }
       }
@@ -45,7 +47,7 @@
         width: 65%;
         align-items: center;
         justify-content: space-around;
-        padding-bottom: 40px;
+        padding: 20px 0;
         .ButtonCV {
           font-family: $secondFont;
           display: flex;
@@ -75,17 +77,25 @@
       justify-content: space-between;
       margin: auto;
       overflow: hidden;
-      & i {
-        color: #eee;
-        font-size: 30px;
-        padding: 10px 15px;
+      gap: 30px;
+
+      svg {
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
         transition-duration: 0.3s;
+        path {
+          fill: white;
+        }
+
         &:hover,
         &:focus,
         &:active {
-          cursor: pointer;
-          color: #0e76a8;
-          transform: scale(1.25);
+          path {
+            fill: #0e76a8;
+          }
+
+          transform: scale(1.1);
         }
       }
     }
@@ -121,9 +131,9 @@
             margin: 0;
             padding: 7px;
             font-size: 12px;
-            & i {
-              font-size: 1.3rem;
-              line-height: 1.5rem;
+            svg {
+              width: 1.3rem;
+              height: 1.3rem;
             }
           }
         }
@@ -139,16 +149,9 @@
           }
         }
       }
-      .socialLinks {
-        & i {
-          line-height: 29px;
-          font-size: 27px;
-          &:hover,
-          &:focus,
-          &:active {
-            font-size: 27px;
-          }
-        }
+      svg {
+        width: 27px;
+        height: 27px;
       }
       .copyright {
         padding: 15px 0 30px;
@@ -180,9 +183,9 @@
             margin: 0;
             padding: 9px;
             font-size: 13px;
-            & i {
-              font-size: 1.3rem;
-              line-height: 1.5rem;
+            svg {
+              width: 1.3rem;
+              height: 1.3rem;
             }
           }
         }
@@ -199,14 +202,9 @@
         }
       }
       .socialLinks {
-        & i {
-          line-height: 29px;
-          font-size: 27px;
-          &:hover,
-          &:focus,
-          &:active {
-            font-size: 27px;
-          }
+        svg {
+          width: 27px;
+          height: 27px;
         }
       }
       .copyright {
@@ -239,9 +237,9 @@
             margin: 0;
             padding: 10px;
             font-size: 14px;
-            & i {
-              font-size: 1.3rem;
-              line-height: 1.5rem;
+            svg {
+              width: 1.3rem;
+              height: 1.3rem;
             }
           }
         }
@@ -258,14 +256,9 @@
         }
       }
       .socialLinks {
-        & i {
-          line-height: 32px;
-          font-size: 30px;
-          &:hover,
-          &:focus,
-          &:active {
-            font-size: 30px;
-          }
+        svg {
+          width: 30px;
+          height: 30px;
         }
       }
       .copyright {
@@ -294,9 +287,9 @@
             font-size: 11px;
             margin: 0;
 
-            & i {
-              font-size: 1.1rem;
-              line-height: 1.1rem;
+            svg {
+              width: 1.1rem;
+              height: 1.1rem;
             }
           }
         }
@@ -312,16 +305,9 @@
         }
       }
       .socialLinks {
-        & i {
-          line-height: 21px;
-          font-size: 20px;
-          padding: 10px 15px;
-          cursor: pointer;
-          &:hover,
-          &:focus,
-          &:active {
-            font-size: 20px;
-          }
+        svg {
+          width: 20px;
+          height: 20px;
         }
       }
       .copyright {
@@ -349,9 +335,9 @@
           .contactContent {
             font-size: 12px;
 
-            & i {
-              font-size: 1.2rem;
-              line-height: 1.2rem;
+            svg {
+              width: 1.2rem;
+              height: 1.2rem;
             }
           }
         }
@@ -367,16 +353,9 @@
         }
       }
       .socialLinks {
-        & i {
-          line-height: 22px;
-          font-size: 20px;
-          padding: 10px 15px;
-          cursor: pointer;
-          &:hover,
-          &:focus,
-          &:active {
-            font-size: 20px;
-          }
+        svg {
+          width: 30px;
+          height: 30px;
         }
       }
       .copyright {
@@ -385,6 +364,7 @@
     }
   }
 }
+
 @media screen and (max-width: 1280px) and (min-width: 960px) and (orientation: portrait) {
   .container {
     height: 760px;
@@ -403,9 +383,9 @@
         .mailContainer {
           .contactContent {
             font-size: 12px;
-            & i {
-              font-size: 1.2rem;
-              line-height: 1.2rem;
+            svg {
+              width: 1.2rem;
+              height: 1.2rem;
             }
           }
         }
@@ -439,6 +419,7 @@
     }
   }
 }
+
 @media screen and (max-width: 1280px) and (min-width: 960px) and (orientation: portrait) {
   .container {
     height: 760px;
@@ -457,9 +438,9 @@
         .mailContainer {
           .contactContent {
             font-size: 12px;
-            & i {
-              font-size: 1.2rem;
-              line-height: 1.2rem;
+            svg {
+              width: 1.2rem;
+              height: 1.2rem;
             }
           }
         }
@@ -511,9 +492,9 @@
         .mailContainer {
           .contactContent {
             font-size: 12px;
-            & i {
-              font-size: 1.2rem;
-              line-height: 1.2rem;
+            svg {
+              width: 1.2rem;
+              height: 1.2rem;
             }
           }
         }
@@ -565,9 +546,9 @@
         .mailContainer {
           .contactContent {
             font-size: 12px;
-            & i {
-              font-size: 1.2rem;
-              line-height: 1.2rem;
+            svg {
+              width: 1.2rem;
+              height: 1.2rem;
             }
           }
         }
@@ -619,9 +600,9 @@
         .mailContainer {
           .contactContent {
             font-size: 12px;
-            & i {
-              font-size: 1.2rem;
-              line-height: 1.2rem;
+            svg {
+              width: 1.2rem;
+              height: 1.2rem;
             }
           }
         }
@@ -637,16 +618,9 @@
         }
       }
       .socialLinks {
-        & i {
-          line-height: 31px;
-          font-size: 31px;
-          padding: 10px 15px;
-          cursor: pointer;
-          &:hover,
-          &:focus,
-          &:active {
-            font-size: 31px;
-          }
+        svg {
+          width: 31px;
+          height: 31px;
         }
       }
       .copyright {
