@@ -15,7 +15,7 @@ const Projects = () => {
   const projects: Project[] = [
     {
       id: 1,
-      image: DelfinagramImage.src,
+      image: '/images/delfinagram.png',
       title: t('projectsSection.delfinagram.header'),
       description: t('projectsSection.delfinagram.description'),
       tools:
