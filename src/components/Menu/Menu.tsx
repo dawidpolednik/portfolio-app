@@ -6,6 +6,7 @@ import { useTranslation } from 'next-i18next';
 // import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { Link } from 'react-scroll';
+import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 
 interface MenuProps {
   onClose: () => void;
@@ -32,14 +33,14 @@ export const Menu: FC<MenuProps> = ({ isOpen, onClose }) => {
     { id: 6, name: t('menuOptions.contact'), toNavigate: 'contact' },
   ];
 
-  // useEffect(() => {
-  //   if (isOpen) disableBodyScroll(menuRef.current);
-  // }, [isOpen]);
+  useEffect(() => {
+    if (isOpen && menuRef?.current) disableBodyScroll(menuRef?.current);
+  }, [isOpen]);
 
   const handleOnClose = useCallback(() => {
     onClose();
-    // enableBodyScroll(menuRef.current);
-  }, [onClose]);
+    if (menuRef?.current) enableBodyScroll(menuRef.current);
+  }, [onClose, menuRef.current]);
 
   const renderMenu = useMemo(
     () => (

@@ -1,6 +1,7 @@
 $homeFont : 'RobotoSlab-Regular', serif;
 $secondFont : 'Dosis-Regular', sans-serif;
 $thirdFont: 'Montserrat-Regular', sans-serif;
+$roboto: 'Roboto-Regular', sans-serif;
 
 @font-face {
     font-family: 'RobotoSlab-Regular';
@@ -25,6 +26,16 @@ $thirdFont: 'Montserrat-Regular', sans-serif;
 @font-face {
     font-family: 'Montserrat-Regular';
     src: url('../../public/fonts/Montserrat-Regular.ttf');
+    font-display: swap;
+    font-style: normal;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@font-face {
+    font-family: 'Roboto-Regular';
+    src: url('../../public/fonts/Roboto-Regular.ttf');
     font-display: swap;
     font-style: normal;
     font-weight: 300;

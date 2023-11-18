@@ -19,8 +19,6 @@ const ProjectFC = ({
 }: ProjectProps) => {
   const { t } = useTranslation();
 
-  console.log('image :>> ', image);
-
   return (
     // <ScrollAnimation
     //   animateIn="fadeInDown"
@@ -30,14 +28,13 @@ const ProjectFC = ({
     //   animateOnce
     // >
     <div className={styles.projectsItem}>
-      <a href={gitHub} target='_blank' rel='noopener noreferrer'>
-        <div className={styles.imgContainer}>
-          <Image src={image} className={styles.img} alt='project' fill={true} />
-          <div className={styles.searchIconContainer}>
-            <i className={`${styles.searchIcon} ${'fa fa-search-plus'}`}></i>
-          </div>
+      <div className={styles.imgContainer}>
+        <Image src={image} className={styles.img} alt='project' fill={true} />
+        <div className={styles.searchIconContainer}>
+          <i className={`${styles.searchIcon} ${'fa fa-search-plus'}`}></i>
         </div>
-      </a>
+      </div>
+
       <div className={styles.projectContent}>
         <h4 className={styles.projectTitle}>{title}</h4>
         <p className={styles.projectDescription}>{description}</p>

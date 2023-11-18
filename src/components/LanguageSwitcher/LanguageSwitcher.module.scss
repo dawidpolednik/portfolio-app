@@ -5,7 +5,7 @@
 
 .wrapper {
   position: absolute;
-  top: 5%;
+  top: 10px;
   left: 10%;
   display: flex;
   justify-content: space-evenly;
@@ -74,6 +74,10 @@ input:checked + .slider:before {
   color: #fff;
   padding-left: 10px;
   font-family: $secondFont;
+}
+
+.withLabelDarkColor {
+  color: gray;
 }
 
 @media screen and (max-width: 414px) and (max-aspect-ratio: 13/9) {

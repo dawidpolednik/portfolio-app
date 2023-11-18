@@ -3,7 +3,13 @@ import styles from './LanguageSwitcher.module.scss';
 import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
 
-export const LanguageSwitcher: FC = ({}) => {
+interface LanguageSwitcherProps {
+  isFrostEffect: boolean;
+}
+
+export const LanguageSwitcher: FC<LanguageSwitcherProps> = ({
+  isFrostEffect,
+}) => {
   const { i18n } = useTranslation();
 
   const { push, pathname, query, asPath } = useRouter();
@@ -32,7 +38,11 @@ export const LanguageSwitcher: FC = ({}) => {
         />
         <span className={styles.slider}></span>
       </label>
-      <div className={styles.activeLanguageLabel}>
+      <div
+        className={`${styles.activeLanguageLabel} ${
+          isFrostEffect ? styles.withLabelDarkColor : ''
+        }`}
+      >
         {currentLanguage?.toUpperCase()}
       </div>
     </div>

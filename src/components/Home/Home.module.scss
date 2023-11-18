@@ -1,5 +1,32 @@
 @import '../../styles/variables.scss';
-@import  '../../styles/fonts.scss';
+@import '../../styles/fonts.scss';
+
+.stickyHeader {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  z-index: 100;
+  background-color: transparent;
+  transition: all 0.3s ease-out;
+
+  .headerContentWrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.frostEffect {
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+}
+
+.bgImageWrapper {
+  margin-top: -80px;
+  width: 100%;
+}
 
 .bgImage {
   display: flex;

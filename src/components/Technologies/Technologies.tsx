@@ -17,11 +17,11 @@ import WebpackIcon from '~/images/webpack-icon.svg';
 import JestIcon from '~/images/jest-icon.svg';
 import NextJsIcon from '~/images/nextjs-icon.svg';
 import ViteIcon from '~/images/vite-icon.svg';
+import VitestIcon from '~/images/vitest-icon.svg';
 import ReactTestingLibraryIcon from '~/images/react-testing-library-icon.svg';
 import { useTranslation } from 'next-i18next';
 import { DoubleAngle } from '../DoubleAngle/DoubleAngle';
 import styles from './Technologies.module.scss';
-import Image from 'next/image';
 import { Technology } from '@/models/Technology';
 
 const technologies: Technology[] = [
@@ -97,6 +97,10 @@ const technologies: Technology[] = [
   {
     icon: <ReactTestingLibraryIcon />,
     title: 'React Testing Library',
+  },
+  {
+    icon: <VitestIcon />,
+    title: 'Vitest',
   },
 ];
 
