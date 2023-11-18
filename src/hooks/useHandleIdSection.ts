@@ -22,7 +22,6 @@ export const useHandleIdSection = ({ sectionName }: Config) => {
 
   useEffect(() => {
     if (isInView) {
-      console.log('sectionName :>> ', sectionName);
       replace({
         pathname,
         hash: sectionName,

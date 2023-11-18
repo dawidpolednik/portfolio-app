@@ -1,5 +1,4 @@
-import { FC, useEffect, useRef } from 'react';
-import { DoubleAngle } from '../DoubleAngle/DoubleAngle';
+import { FC } from 'react';
 import styles from './AboutMe.module.scss';
 import { useTranslation } from 'next-i18next';
 import { useInView } from 'framer-motion';
@@ -26,10 +25,6 @@ const AboutMe: FC = () => {
         <p>{t('aboutMeSection.fourthParagraph')}</p>
         <p>{t('aboutMeSection.fifthParagraph')}</p>
         <p>{t('aboutMeSection.sixthParagraph')}</p>
-        <div className={styles.angleContainer}>
-          <DoubleAngle subPage='education' />
-          <DoubleAngle onUp={true} subPage='home' />
-        </div>
       </section>
     </div>
   );

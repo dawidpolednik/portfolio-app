@@ -1,5 +1,4 @@
 import { FC, useMemo } from 'react';
-// import ScrollAnimation from "react-animate-on-scroll";
 import HtmlIcon from '~/images/html5-icon.svg';
 import CssIcon from '~/images/css-icon.svg';
 import JavascriptIcon from '~/images/js-icon.svg';
@@ -20,9 +19,9 @@ import ViteIcon from '~/images/vite-icon.svg';
 import VitestIcon from '~/images/vitest-icon.svg';
 import ReactTestingLibraryIcon from '~/images/react-testing-library-icon.svg';
 import { useTranslation } from 'next-i18next';
-import { DoubleAngle } from '../DoubleAngle/DoubleAngle';
 import styles from './Technologies.module.scss';
 import { Technology } from '@/models/Technology';
+import { Variants, motion } from 'framer-motion';
 
 const technologies: Technology[] = [
   {
@@ -104,24 +103,41 @@ const technologies: Technology[] = [
   },
 ];
 
+const fadeInAnimationVariant: Variants = {
+  initial: {
+    opacity: 0,
+    y: 100,
+  },
+  animate: (idx: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 1,
+      delay: 0.05 * idx,
+    },
+  }),
+};
+
 export const Technologies: FC = () => {
   const { t } = useTranslation();
 
   const renderTechnologiesSection = useMemo(
     () =>
       technologies.map(({ icon, title }, idx) => (
-        // <ScrollAnimation
-        //   key={id}
-        //   animateIn="fadeInLeftBig"
-        //   duration={1}
-        //   initiallyVisible={false}
-        //   animateOnce
-        // >
-        <div className={styles.imgSection} key={`${title}-${idx}`}>
+        <motion.div
+          key={`${title}-${idx}`}
+          className={styles.imgSection}
+          variants={fadeInAnimationVariant}
+          initial={'initial'}
+          whileInView={'animate'}
+          viewport={{
+            once: true,
+          }}
+          custom={idx}
+        >
           <div className={styles.imgContainer}>{icon}</div>
           <p className={styles.imgHeader}>{title}</p>
-        </div>
-        // </ScrollAnimation>
+        </motion.div>
       )),
     [],
   );
@@ -137,10 +153,7 @@ export const Technologies: FC = () => {
         <div className={styles.technologiesSection}>
           {renderTechnologiesSection}
         </div>
-        <div className={styles.angleContainer}>
-          <DoubleAngle subPage='projects' />
-          <DoubleAngle onUp={true} subPage='education' />
-        </div>
+        <div className={styles.angleContainer}></div>
       </div>
     </section>
   );

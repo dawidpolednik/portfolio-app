@@ -1,5 +1,4 @@
 import React, { useMemo } from 'react';
-import { DoubleAngle } from '../DoubleAngle/DoubleAngle';
 import Project from './Project';
 import styles from './Projects.module.scss';
 import { useTranslation } from 'next-i18next';
@@ -85,10 +84,6 @@ const Projects = () => {
       </div>
       <div className={styles.projectsBackground}>
         <div className={styles.projectsSection}>{renderProjects}</div>
-      </div>
-      <div className={styles.angleContainer}>
-        <DoubleAngle subPage='contact' />
-        <DoubleAngle onUp={true} subPage='technologies' />
       </div>
     </section>
   );

@@ -4,7 +4,8 @@
 .aboutContainer {
   display: flex;
   justify-content: center;
-  background-image: linear-gradient(black, black), url('../../../public/images/weights.jpg');
+  background-image: linear-gradient(black, black),
+    url('../../../public/images/weights.jpg');
   background-blend-mode: saturation;
   background-position: center;
   background-attachment: fixed;
@@ -43,12 +44,6 @@
       text-align: justify;
       text-justify: distribute;
       text-align-last: left;
-    }
-
-    .angleContainer {
-      display: flex;
-      justify-content: center;
-      align-items: center;
     }
   }
 }

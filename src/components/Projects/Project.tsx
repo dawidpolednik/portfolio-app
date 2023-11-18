@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import styles from './Projects.module.scss';
-// import ScrollAnimation from 'react-animate-on-scroll';
 import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
+import { useScroll, motion, useTransform } from 'framer-motion';
 
 const titleButtons = ['GitHub', 'Live Demo'];
 
@@ -19,15 +19,24 @@ const ProjectFC = ({
 }: ProjectProps) => {
   const { t } = useTranslation();
 
+  const projectWrapperRef = useRef<HTMLDivElement>(null);
+
+  const { scrollYProgress } = useScroll({
+    target: projectWrapperRef,
+    offset: ['0 1', '0.5 1'],
+  });
+
+  const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.4, 1]);
+
   return (
-    // <ScrollAnimation
-    //   animateIn="fadeInDown"
-    //   initiallyVisible={false}
-    //   duration={1}
-    //   delay={100}
-    //   animateOnce
-    // >
-    <div className={styles.projectsItem}>
+    <motion.div
+      className={styles.projectsItem}
+      ref={projectWrapperRef}
+      style={{
+        scale: scaleProgress,
+        opacity: scrollYProgress,
+      }}
+    >
       <div className={styles.imgContainer}>
         <Image src={image} className={styles.img} alt='project' fill={true} />
         <div className={styles.searchIconContainer}>
@@ -74,8 +83,7 @@ const ProjectFC = ({
           </div>
         )}
       </div>
-    </div>
+    </motion.div>
   );
-  // );
 };
 export default ProjectFC;

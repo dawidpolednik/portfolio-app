@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './LandingPage.module.scss';
 import Picture from '~/images/polednik.jpg';
-import { DoubleAngle } from '../DoubleAngle/DoubleAngle';
 import { socialMediaData } from '../SocialMedia/data';
 import SocialMedia from '../SocialMedia/SocialMedia';
 import Image from 'next/image';
@@ -22,7 +21,6 @@ const LandingPage = () => {
           ))}
         </div>
       </div>
-      <DoubleAngle subPage='aboutMe' />
     </section>
   );
 };

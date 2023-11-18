@@ -2,7 +2,6 @@ import { Form, Formik, FormikProps } from 'formik';
 import React, { FC } from 'react';
 import * as Yup from 'yup';
 import { useTranslation } from 'next-i18next';
-import { DoubleAngle } from '../DoubleAngle/DoubleAngle';
 import styles from './Contact.module.scss';
 import { Error } from './Errors';
 import Input from './Input';
@@ -130,7 +129,6 @@ const Contact: FC = () => {
             )}
           />
         </div>
-        <DoubleAngle onUp={true} subPage='projects' />
       </div>
     </section>
   );
