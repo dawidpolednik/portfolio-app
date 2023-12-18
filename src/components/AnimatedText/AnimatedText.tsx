@@ -1,6 +1,7 @@
 import { Variant, motion, useAnimation, useInView } from 'framer-motion';
 import { useEffect, useRef } from 'react';
 import styles from './AnimatedText.module.scss';
+import { useTranslation } from 'next-i18next';
 
 type AnimatedTextProps = {
   text: string | string[];
@@ -41,6 +42,10 @@ export const AnimatedText = ({
   const ref = useRef(null);
   const isInView = useInView(ref, { amount: 0.5, once });
 
+  const { i18n } = useTranslation();
+
+  const currentLocale = i18n?.language;
+
   useEffect(() => {
     let timeout: NodeJS.Timeout;
 
@@ -61,7 +66,7 @@ export const AnimatedText = ({
     }
 
     return () => clearTimeout(timeout);
-  }, [isInView]);
+  }, [isInView, currentLocale]);
 
   return (
     <Element className={className}>

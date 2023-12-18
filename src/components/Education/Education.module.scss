@@ -103,7 +103,11 @@
           font-size: 0.9em;
           min-width: 120px;
           font-family: "Saira", sans-serif;
+
+          
         }
+
+   
 
         &:after {
           box-shadow: 0 0 0 4px fade(#004ffc, 100%);
@@ -336,8 +340,21 @@
             margin-bottom: 0;
             padding-bottom: 20px;
           }
+
+       
         }
       }
     }
   }
+
+
+}
+
+@media screen and (min-width: 1024px){
+  .event {
+    &:before {
+      left: (((120px * 0.7) + 50px + 4px + 11px + (4px * 2)) * 1.5) * -1 !important;
+    }
+  }
+
 }

@@ -38,10 +38,7 @@ const ProjectFC = ({
       }}
     >
       <div className={styles.imgContainer}>
-        <Image src={image} className={styles.img} alt='project' fill={true} />
-        <div className={styles.searchIconContainer}>
-          <i className={`${styles.searchIcon} ${'fa fa-search-plus'}`}></i>
-        </div>
+        <Image src={image} className={styles.img} alt={title} fill={true} />
       </div>
 
       <div className={styles.projectContent}>

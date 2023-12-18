@@ -21,9 +21,7 @@ export async function getStaticProps(context: GetStaticPropsContext) {
 }
 
 const App: FC = () => {
-  const { t } = useTranslation('common');
-
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation('common');
 
   const currentLocale = i18n?.language;
 
