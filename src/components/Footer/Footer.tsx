@@ -9,6 +9,8 @@ import PhoneIcon from '~/images/phone-icon.svg';
 const Footer = () => {
   const { t } = useTranslation();
 
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className={styles.container}>
       <div className={styles.contentWidth}>
@@ -54,7 +56,9 @@ const Footer = () => {
             <SocialLinks key={`${type}-${idx}}`} href={href} type={type} />
           ))}
         </div>
-        <p className={styles.copyright}>&#169; 2019-2023 Dawid Polednik</p>
+        <p className={styles.copyright}>
+          &#169; {`2019-${currentYear} Dawid Polednik`}
+        </p>
       </div>
     </footer>
   );

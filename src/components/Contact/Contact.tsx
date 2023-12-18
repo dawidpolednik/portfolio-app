@@ -6,6 +6,7 @@ import styles from './Contact.module.scss';
 import { Error } from './Errors';
 import Input from './Input';
 import TextArea from './TextArea';
+import { AnimatedText } from '@/components/AnimatedText/AnimatedText';
 import sendMail from '@/service/email-service';
 
 const Contact: FC = () => {
@@ -20,7 +21,11 @@ const Contact: FC = () => {
   return (
     <section className={styles.container} id='contact'>
       <div className={styles.contactHeader}>
-        <h2 className={styles.contactTitle}>{t('contactSection.header')}</h2>
+        <AnimatedText
+          text={t('contactSection.header')}
+          className={styles.contactTitle}
+          el='h2'
+        />
       </div>
       <div className={styles.contactBackground}>
         <div className={styles.contactSection}>

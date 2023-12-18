@@ -1,23 +1,6 @@
 @import '../../styles/fonts.scss';
 @import '../../styles/variables.scss';
 
-@keyframes onRenderMenuItem {
-  0% {
-    opacity: 0;
-    transform: translateY(100px);
-  }
-
-  50% {
-    transform: translateY(10px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-    cursor: pointer;
-  }
-}
-
 .wrapper {
   position: fixed;
   top: 0;
@@ -69,11 +52,10 @@
 }
 
 .menuItem {
-  animation: onRenderMenuItem 1.5s forwards ease-in-out;
   margin-bottom: 60px;
   cursor: pointer;
-  &:hover {
-    opacity: 0.4;
+  &:hover * {
+    opacity: 0.5;
   }
 }
 .menuItemContent {

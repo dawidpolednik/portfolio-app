@@ -7,6 +7,7 @@ import ListingCodeImage from '~/images/code.png';
 import CurrencyConverterImage from '~/images/currencyConverter.png';
 import CitiesSearcherImage from '~/images/citiesSearcher.png';
 import AmongUsImage from '~/images/amongUs.png';
+import { AnimatedText } from '@/components/AnimatedText/AnimatedText';
 
 const Projects = () => {
   const { t } = useTranslation();
@@ -80,7 +81,11 @@ const Projects = () => {
   return (
     <section className={styles.container} id='projects'>
       <div className={styles.projectsHeader}>
-        <h2 className={styles.projectsTitle}>{t('projectsSection.header')}</h2>
+        <AnimatedText
+          text={t('projectsSection.header')}
+          className={styles.projectsTitle}
+          el='h2'
+        />
       </div>
       <div className={styles.projectsBackground}>
         <div className={styles.projectsSection}>{renderProjects}</div>

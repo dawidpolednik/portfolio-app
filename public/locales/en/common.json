@@ -1,4 +1,8 @@
 {
+  "seo": {
+    "title": "Dawid Polednik | Frontend Developer",
+    "description": "Explore a portfolio page highlighting a collection of projects and achievements."
+  },
   "menuOptions": {
     "home": "Home",
     "aboutMe": "About Me",

@@ -1,4 +1,8 @@
 {
+  "seo": {
+    "title": "Dawid Polednik | Frontend Developer",
+    "description": "Przejrzyj moje portfolio, aby zobaczyć, jakie projekty stworzyłem i jakie umiejętności posiadam."
+  },
   "menuOptions": {
     "home": "Home",
     "aboutMe": "O Mnie",

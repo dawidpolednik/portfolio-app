@@ -7,6 +7,7 @@ import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
 import { Link } from 'react-scroll';
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
+import { Variants, motion } from 'framer-motion';
 
 interface MenuProps {
   onClose: () => void;
@@ -33,6 +34,21 @@ export const Menu: FC<MenuProps> = ({ isOpen, onClose }) => {
     { id: 6, name: t('menuOptions.contact'), toNavigate: 'contact' },
   ];
 
+  const fadeInAnimationVariant: Variants = {
+    initial: {
+      opacity: 0,
+      y: 100,
+    },
+    animate: (idx: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1,
+        delay: 0.05 * idx,
+      },
+    }),
+  };
+
   useEffect(() => {
     if (isOpen && menuRef?.current) disableBodyScroll(menuRef?.current);
   }, [isOpen]);
@@ -46,9 +62,16 @@ export const Menu: FC<MenuProps> = ({ isOpen, onClose }) => {
     () => (
       <nav className={`${styles.menuWrapper} ${styles.resetBlur}`}>
         <ul className={styles.menuList}>
-          {menuItems.map(({ id, name, toNavigate }, index) => {
+          {menuItems.map(({ id, name, toNavigate }, idx) => {
             return (
-              <li key={id} className={styles.menuItem}>
+              <motion.li
+                key={id}
+                className={styles.menuItem}
+                variants={fadeInAnimationVariant}
+                whileInView={'animate'}
+                initial={'initial'}
+                custom={idx}
+              >
                 <Link
                   className={styles.menuItemContent}
                   activeClass='active'
@@ -72,7 +95,7 @@ export const Menu: FC<MenuProps> = ({ isOpen, onClose }) => {
                 >
                   {name}
                 </Link> */}
-              </li>
+              </motion.li>
             );
           })}
         </ul>

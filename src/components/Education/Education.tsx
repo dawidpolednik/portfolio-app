@@ -1,3 +1,4 @@
+import { AnimatedText } from '@/components/AnimatedText/AnimatedText';
 import styles from './Education.module.scss';
 import LifeEvent from './LifeEvent';
 import { useTranslation } from 'next-i18next';
@@ -49,9 +50,11 @@ const Education = () => {
     <>
       <section className={styles.container} id={sectionName}>
         <div className={styles.educationHeader}>
-          <h2 className={styles.educationTitle}>
-            {t('educationSection.header')}
-          </h2>
+          <AnimatedText
+            text={t('educationSection.header')}
+            className={styles.educationTitle}
+            el='h2'
+          />
         </div>
 
         <div className={styles.educationSection}>

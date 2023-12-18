@@ -22,6 +22,7 @@ import { useTranslation } from 'next-i18next';
 import styles from './Technologies.module.scss';
 import { Technology } from '@/models/Technology';
 import { Variants, motion } from 'framer-motion';
+import { AnimatedText } from '@/components/AnimatedText/AnimatedText';
 
 const technologies: Technology[] = [
   {
@@ -145,9 +146,11 @@ export const Technologies: FC = () => {
   return (
     <section className={styles.container} id='technologies'>
       <div className={styles.technologiesHeader}>
-        <h2 className={styles.technologiesTitle}>
-          {t('technologiesSection.header')}
-        </h2>
+        <AnimatedText
+          text={t('technologiesSection.header')}
+          className={styles.technologiesTitle}
+          el='h2'
+        />
       </div>
       <div className={styles.technologiesBackground}>
         <div className={styles.technologiesSection}>
