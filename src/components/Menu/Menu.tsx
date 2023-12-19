@@ -3,9 +3,8 @@ import styles from './Menu.module.scss';
 import { CloseIcon } from './CloseIcon/CloseIcon';
 import ReactDOM from 'react-dom';
 import { useTranslation } from 'next-i18next';
-// import Link from 'next/link';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { Link } from 'react-scroll';
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 import { Variants, motion } from 'framer-motion';
 
@@ -19,7 +18,7 @@ export const Menu: FC<MenuProps> = ({ isOpen, onClose }) => {
 
   const { t } = useTranslation();
 
-  const { asPath } = useRouter();
+  const { asPath, events } = useRouter();
 
   const menuItems: MenuItem[] = [
     { id: 1, name: t('menuOptions.home'), toNavigate: 'home' },
@@ -58,6 +57,13 @@ export const Menu: FC<MenuProps> = ({ isOpen, onClose }) => {
     if (menuRef?.current) enableBodyScroll(menuRef.current);
   }, [onClose, menuRef.current]);
 
+  useEffect(() => {
+    events.on('hashChangeStart', handleOnClose);
+
+    return () => events.off('hashChangeStart', handleOnClose);
+    // eslint-disable-next-line
+  }, [events]);
+
   const renderMenu = useMemo(
     () => (
       <nav className={`${styles.menuWrapper} ${styles.resetBlur}`}>
@@ -72,7 +78,7 @@ export const Menu: FC<MenuProps> = ({ isOpen, onClose }) => {
                 initial={'initial'}
                 custom={idx}
               >
-                <Link
+                {/* <Link
                   className={styles.menuItemContent}
                   activeClass='active'
                   to={toNavigate}
@@ -82,19 +88,18 @@ export const Menu: FC<MenuProps> = ({ isOpen, onClose }) => {
                   offset={0}
                   duration={1000}
                   delay={250}
-                  isDynamic={true}
+                  isDynamic={false}
                   ignoreCancelEvents={false}
                   onClick={handleOnClose}
                 >
                   {name}
-                </Link>
-                {/* <Link
-                  key={id}
+                </Link> */}
+                <Link
                   href={`#${toNavigate}`}
                   className={styles.menuItemContent}
                 >
                   {name}
-                </Link> */}
+                </Link>
               </motion.li>
             );
           })}
@@ -103,10 +108,6 @@ export const Menu: FC<MenuProps> = ({ isOpen, onClose }) => {
     ),
     [menuItems, handleOnClose],
   );
-
-  useEffect(() => {
-    handleOnClose();
-  }, [asPath]);
 
   if (!isOpen) return null;
 
@@ -119,6 +120,6 @@ export const Menu: FC<MenuProps> = ({ isOpen, onClose }) => {
         {renderMenu}
       </div>
     </div>,
-    document.getElementById('portal') as any,
+    document.getElementById('portal') as HTMLElement,
   );
 };

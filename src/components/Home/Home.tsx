@@ -3,7 +3,7 @@ import styles from './Home.module.scss';
 import { LanguageSwitcher } from '../LanguageSwitcher/LanguageSwitcher';
 import { HamburgerMenu } from '../HamburgerMenu/HamburgerMenu';
 import { Menu } from '../Menu/Menu';
-import LandingPage from '../LandingPage/LandingPage';
+import Hero from '@/components/Hero/Hero';
 import AboutMe from '../AboutMe/AboutMe';
 import Education from '../Education/Education';
 import { Technologies } from '../Technologies/Technologies';
@@ -50,7 +50,7 @@ const App: FC = () => {
         <div className={styles.bgImage}>
           <Menu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
           <div className={styles.container}>
-            <LandingPage />
+            <Hero />
           </div>
         </div>
       </div>

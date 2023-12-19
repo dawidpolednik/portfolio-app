@@ -252,26 +252,7 @@
         .contactForm {
           padding: 20px 0 20px;
           width: 100%;
-          .col {
-            float: left;
-            width: 80%;
-            input[type='text'],
-            select:focus,
-            .effect:focus {
-              font-size: 1rem;
-              line-height: 1rem;
-              &::placeholder {
-                font-size: 1rem;
-              }
-              &:-ms-input-placeholder {
-                font-size: 1rem;
-              }
-
-              &::-ms-input-placeholder {
-                font-size: 1rem;
-              }
-            }
-          }
+         
           .buttonsContainer {
             grid-gap: 20px;
             .formButton {

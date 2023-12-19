@@ -1,11 +1,11 @@
 import React from 'react';
-import styles from './LandingPage.module.scss';
+import styles from './Hero.module.scss';
 import Picture from '~/images/polednik.jpg';
 import { socialMediaData } from '../SocialMedia/data';
 import SocialMedia from '../SocialMedia/SocialMedia';
 import Image from 'next/image';
 
-const LandingPage = () => {
+const Hero = () => {
   return (
     <section className={styles.landingGrid} id='home'>
       <div className={styles.imgContainer}>
@@ -24,4 +24,4 @@ const LandingPage = () => {
     </section>
   );
 };
-export default LandingPage;
+export default Hero;

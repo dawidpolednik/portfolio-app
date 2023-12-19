@@ -33,7 +33,7 @@ export const AnimatedText = ({
   text,
   el: Element = 'p',
   className,
-  once = true,
+  once = false,
   repeatDelay,
   animation = defaultAnimations,
 }: AnimatedTextProps) => {
