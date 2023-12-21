@@ -99,12 +99,21 @@
       "reset": "Wyczyść",
       "submit": "Wyślij"
     },
-    "errorMessages": {
-      "name": "To pole jest wymagane. Minimalna liczba znaków: 5",
-      "email": "Podany adres E-mail jest nieprawidłowy",
-      "message": "To pole jest wymagane. Minimalna liczba znaków: 10",
-      "requestRejected": "Błąd podczas wysyłania wiadomości..."
+    "errors": {
+      "name": {
+        "required": "Nazwa jest wymagana",
+        "min": "Minimalna liczba znaków: 5"
+      },
+      "email": {
+        "required": "Adres e-mail jest wymagany",
+        "invalid": "Adres e-mail jest nieprawidłowy"
+      },
+      "message": {
+        "required": "Wiadomość jest wymagana",
+        "min": "Minimalna liczba znaków: 10"
+      }
     },
+    "requestRejected": "Błąd podczas wysyłania wiadomości...",
     "requestResolved": "Wiadomość została wysłana"
   },
   "footerSection": {

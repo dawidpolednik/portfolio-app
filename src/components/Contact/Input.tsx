@@ -1,16 +1,27 @@
 import React, { FC, SyntheticEvent } from 'react';
 import style from './Contact.module.scss';
-
+import { ErrorMessage } from '@/components/Contact/ErrorMessage';
+import { useTranslation } from 'next-i18next';
 interface InputProps {
   name: string;
   placeholder: string;
   value: string;
   onChange: (e: SyntheticEvent) => void;
+  errorMessage?: string;
 }
 
-const Input: FC<InputProps> = ({ name, placeholder, value, onChange }) => {
+const Input: FC<InputProps> = ({
+  name,
+  placeholder,
+  value,
+  onChange,
+  errorMessage,
+}) => {
+  const { t } = useTranslation();
+
   return (
     <>
+      {errorMessage && <ErrorMessage message={errorMessage} />}
       <label className={style.label} htmlFor={name}></label>
       <div className={`${style.col}`}>
         <input

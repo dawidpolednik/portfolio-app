@@ -1,12 +1,13 @@
-import React, { FC, SyntheticEvent } from 'react';
-
+import { FC, SyntheticEvent } from 'react';
 import style from './Contact.module.scss';
+import { ErrorMessage } from '@/components/Contact/ErrorMessage';
 
 interface TextAreaProps {
   name: string;
   placeholder: string;
   value: string;
   onChange: (e: SyntheticEvent) => void;
+  errorMessage?: string;
 }
 
 const TextArea: FC<TextAreaProps> = ({
@@ -14,9 +15,11 @@ const TextArea: FC<TextAreaProps> = ({
   placeholder,
   value,
   onChange,
+  errorMessage,
 }) => {
   return (
     <>
+      {errorMessage && <ErrorMessage message={errorMessage} />}
       <label className={style.label} htmlFor={name}></label>
       <div className={`${style.col}`}>
         <textarea

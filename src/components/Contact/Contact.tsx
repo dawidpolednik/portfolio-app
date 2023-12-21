@@ -1,22 +1,61 @@
-import { Form, Formik, FormikProps } from 'formik';
-import React, { FC } from 'react';
-import * as Yup from 'yup';
+import React, { FC, useCallback, useState } from 'react';
+import * as yup from 'yup';
+import { yupResolver } from '@hookform/resolvers/yup';
 import { useTranslation } from 'next-i18next';
 import styles from './Contact.module.scss';
-import { Error } from './Errors';
 import Input from './Input';
 import TextArea from './TextArea';
 import { AnimatedText } from '@/components/AnimatedText/AnimatedText';
 import sendMail from '@/service/email-service';
+import { Controller, useForm } from 'react-hook-form';
+import { FormValues } from '@/models/FormValues';
 
 const Contact: FC = () => {
-  const initialValues: FormMailerValues = {
+  const defaultValues: FormValues = {
     name: '',
     email: '',
     message: '',
   };
 
   const { t } = useTranslation();
+
+  const schema = yup.object().shape({
+    name: yup.string().required().min(5),
+    email: yup.string().required().email(),
+    message: yup.string().required().min(10),
+  });
+
+  const {
+    handleSubmit,
+    control,
+    formState,
+    trigger,
+    reset,
+    resetField,
+    getValues,
+  } = useForm<FormValues>({
+    resolver: yupResolver(schema),
+    defaultValues,
+  });
+
+  const [isRequestRejected, setIsRequestRejected] = useState<boolean>(false);
+
+  const { errors, isLoading, isSubmitSuccessful, isSubmitting } = formState;
+
+  const onSubmit = useCallback(async (data: FormValues) => {
+    const { name, email, message } = data;
+    try {
+      await sendMail({
+        name,
+        email,
+        message,
+      });
+      // reset();
+    } catch (error) {
+      console.log({ error });
+      setIsRequestRejected(true);
+    }
+  }, []);
 
   return (
     <section className={styles.container} id='contact'>
@@ -29,7 +68,120 @@ const Contact: FC = () => {
       </div>
       <div className={styles.contactBackground}>
         <div className={styles.contactSection}>
-          <Formik
+          <form
+            onSubmit={handleSubmit(onSubmit)}
+            className={styles.contactForm}
+          >
+            <Controller
+              control={control}
+              defaultValue={defaultValues.name}
+              name='name'
+              render={({
+                field: { value, onChange },
+                fieldState: { error, isTouched },
+              }) => {
+                console.log('isTouched :>> ', isTouched);
+                return (
+                  <Input
+                    name='name'
+                    placeholder={t('contactSection.placeholders.name')}
+                    value={value}
+                    onChange={onChange}
+                    errorMessage={
+                      error?.type === 'required'
+                        ? t('contactSection.errors.name.required')
+                        : error?.type === 'min'
+                        ? t('contactSection.errors.name.min')
+                        : undefined
+                    }
+                  />
+                );
+              }}
+            />
+
+            <Controller
+              control={control}
+              defaultValue={defaultValues.email}
+              name='email'
+              render={({
+                field: { value, onChange },
+                fieldState: { error },
+              }) => {
+                return (
+                  <Input
+                    name='email'
+                    placeholder={t('contactSection.placeholders.email')}
+                    value={value}
+                    onChange={onChange}
+                    errorMessage={
+                      error?.type === 'required'
+                        ? t('contactSection.errors.email.required')
+                        : error?.type === 'email'
+                        ? t('contactSection.errors.email.invalid')
+                        : undefined
+                    }
+                  />
+                );
+              }}
+            />
+
+            <Controller
+              control={control}
+              defaultValue={defaultValues.message}
+              name='message'
+              render={({
+                field: { value, onChange },
+                fieldState: { error },
+              }) => {
+                return (
+                  <TextArea
+                    name='message'
+                    placeholder={t('contactSection.placeholders.message')}
+                    value={value}
+                    onChange={onChange}
+                    errorMessage={
+                      error?.type === 'required'
+                        ? t('contactSection.errors.message.required')
+                        : error?.type === 'min'
+                        ? t('contactSection.errors.message.min')
+                        : undefined
+                    }
+                  />
+                );
+              }}
+            />
+
+            <div className={styles.buttonsContainer}>
+              <input
+                className={styles.formButton}
+                type='button'
+                onClick={() => {
+                  reset();
+                  setIsRequestRejected(false);
+                }}
+                value={`${t('contactSection.buttons.reset')}`}
+                disabled={isSubmitting}
+              />
+              <input
+                className={styles.formButton}
+                type='submit'
+                value={`${t('contactSection.buttons.submit')}`}
+                disabled={isSubmitting}
+              />
+            </div>
+
+            {(isSubmitSuccessful || isRequestRejected) && (
+              <div className={styles.confirmationContainer}>
+                <p className={styles.confirmationMessage}>
+                  {isSubmitSuccessful
+                    ? t('contactSection.requestResolved')
+                    : t('contactSection.requestRejected')}
+                </p>
+              </div>
+            )}
+          </form>
+
+          {/* <Formik
             initialValues={initialValues}
             validationSchema={Yup.object().shape({
               name: Yup.string().min(5).required(),
@@ -117,8 +269,8 @@ const Contact: FC = () => {
                     type='submit'
                     value={`${t('contactSection.buttons.submit')}`}
                   />
-                </div>
-                {status && (
+                </div> */}
+          {/* {status && (
                   <div className={styles.confirmationContainer}>
                     <p
                       className={
@@ -130,9 +282,9 @@ const Contact: FC = () => {
                     </p>
                   </div>
                 )}
-              </Form>
-            )}
-          />
+              </Form> */}
+          {/* )} */}
+          {/* /> */}
         </div>
       </div>
     </section>

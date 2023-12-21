@@ -99,12 +99,21 @@
       "reset": "Clear",
       "submit": "Send"
     },
-    "errorMessages": {
-      "name": "This field is required. Minimum number of characters: 5",
-      "email": "The e-mail address provided is invalid",
-      "message": "This field is required. Minimum number of characters: 10",
-      "requestRejected": "Error while sending a message..."
+    "errors": {
+      "name": {
+        "required": "Name is required",
+        "min": "Minimum number of characters: 5"
+      },
+      "email": {
+        "required": "Email is required",
+        "invalid": "The e-mail address provided is invalid"
+      },
+      "message": {
+        "required": "Message is required",
+        "min": "Minimum number of characters: 10"
+      }
     },
+    "requestRejected": "Error while sending a message...",
     "requestResolved": "Your message has been sent"
   },
   "footerSection": {

@@ -1,4 +1,4 @@
-type NavigationSectionName =
+export type NavigationSectionName =
   | 'home'
   | 'aboutMe'
   | 'education'

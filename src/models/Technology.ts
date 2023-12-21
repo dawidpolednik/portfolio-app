@@ -1,6 +1,6 @@
 import { ReactElement } from 'react';
 
-interface Technology {
+export interface Technology {
   title: string;
   icon: ReactElement;
   description?: string;
