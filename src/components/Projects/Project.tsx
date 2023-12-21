@@ -3,6 +3,7 @@ import styles from './Projects.module.scss';
 import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
 import { useScroll, motion, useTransform } from 'framer-motion';
+import { Project } from '@/models/Project';
 
 const titleButtons = ['GitHub', 'Live Demo'];
 

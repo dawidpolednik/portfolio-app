@@ -8,14 +8,15 @@ import CurrencyConverterImage from '~/images/currencyConverter.png';
 import CitiesSearcherImage from '~/images/citiesSearcher.png';
 import AmongUsImage from '~/images/amongUs.png';
 import { AnimatedText } from '@/components/AnimatedText/AnimatedText';
+import { Project as IProject } from '@/models/Project';
 
 const Projects = () => {
   const { t } = useTranslation();
 
-  const projects: Project[] = [
+  const projects: IProject[] = [
     {
       id: 1,
-      image: '/images/delfinagram.png',
+      image: DelfinagramImage.src,
       title: t('projectsSection.delfinagram.header'),
       description: t('projectsSection.delfinagram.description'),
       tools:

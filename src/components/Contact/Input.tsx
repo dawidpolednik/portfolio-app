@@ -17,8 +17,6 @@ const Input: FC<InputProps> = ({
   onChange,
   errorMessage,
 }) => {
-  const { t } = useTranslation();
-
   return (
     <>
       {errorMessage && <ErrorMessage message={errorMessage} />}

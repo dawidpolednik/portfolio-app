@@ -1,14 +1,16 @@
 import { AnimatedText } from '@/components/AnimatedText/AnimatedText';
 import styles from './Education.module.scss';
-import LifeEvent from './LifeEvent';
 import { useTranslation } from 'next-i18next';
+import { NavigationSectionName } from '@/models/NavigationSectionName';
+import { LifeEvent as ILifeEvent } from '@/models/LifeEvent';
+import LifeEvent from './LifeEvent';
 
 const sectionName: NavigationSectionName = 'education';
 
 const Education = () => {
   const { t } = useTranslation();
 
-  const lifeEvents: LifeEvent[] = [
+  const lifeEvents: ILifeEvent[] = [
     {
       date: t('educationSection.lifeEvents.currentWork.time'),
       title: t('educationSection.lifeEvents.currentWork.header'),

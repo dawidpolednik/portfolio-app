@@ -3,8 +3,9 @@ import FacebookIcon from '~/images/facebook-icon.svg';
 import LinkedinIcon from '~/images/linkedin-icon.svg';
 import GithubIcon from '~/images/github-icon.svg';
 import StackoverflowIcon from '~/images/stackoverflow-icon.svg';
+import { SocialMedia as ISocialMedia } from '@/models/SocialMedia';
 
-type SocialLinkProps = SocialMedium;
+type SocialLinkProps = ISocialMedia;
 
 const SocialMedia: FC<SocialLinkProps> = ({ href, type }) => {
   const icon = useMemo(() => {

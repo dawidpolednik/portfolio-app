@@ -5,6 +5,7 @@ import { useInView } from 'framer-motion';
 import { useRouter } from 'next/router';
 import { useHandleIdSection } from '@/hooks/useHandleIdSection';
 import { AnimatedText } from '@/components/AnimatedText/AnimatedText';
+import { NavigationSectionName } from '@/models/NavigationSectionName';
 
 const sectionName: NavigationSectionName = 'aboutMe';
 

@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 import { Variants, motion } from 'framer-motion';
+import { MenuItem } from '@/models/MenuItem';
 
 interface MenuProps {
   onClose: () => void;
@@ -18,7 +19,7 @@ export const Menu: FC<MenuProps> = ({ isOpen, onClose }) => {
 
   const { t } = useTranslation();
 
-  const { asPath, events } = useRouter();
+  const { events } = useRouter();
 
   const menuItems: MenuItem[] = [
     { id: 1, name: t('menuOptions.home'), toNavigate: 'home' },
