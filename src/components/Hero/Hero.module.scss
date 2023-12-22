@@ -1,0 +1,242 @@
+@import '../../styles/fonts.scss';
+@import '../../styles/variables.scss';
+
+.landingGrid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  .imgContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 290px;
+    height: 290px;
+
+    .img {
+      margin: 0 auto;
+      width: auto;
+      height: 100%;
+      transition: 0.5s;
+      clip-path: circle(40%);
+    }
+  }
+  .bannerText {
+    width: 50%;
+    background-color: black;
+    color: white;
+    opacity: 0.8;
+    border-radius: 10px;
+    text-align: center;
+    .bannerName {
+      font-weight: 300;
+      margin: 0;
+      font-family: $secondFont;
+      font-size: 36px;
+      padding: 25px 0 7px;
+    }
+    .bannerTitle {
+      font-family: $secondFont;
+      margin: 0;
+      padding: 7px 15px;
+      font-size: 44px;
+      font-weight: normal;
+    }
+    .bannerHR {
+      display: block;
+      border-style: dotted none none;
+      border-width: 5px;
+      border-color: white;
+      width: 50%;
+      margin: 10px auto auto auto;
+      padding: 0;
+    }
+    .socialLinks {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: auto;
+      padding: 25px 0 15px;
+      gap: 30px;
+
+      svg {
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        transition-duration: 0.3s;
+        path {
+          fill: white;
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+          path {
+            fill: #0e76a8;
+          }
+
+          transform: scale(1.1);
+        }
+      }
+    }
+
+  
+  }
+}
+@media screen and (max-width: 320px) and (max-aspect-ratio: 13/9) {
+  .landingGrid {
+    .imgContainer {
+      width: 200px;
+      height: 200px;
+    }
+    .bannerText {
+      width: 90%;
+      .bannerName {
+        font-size: 28px;
+      }
+      .bannerTitle {
+        padding: 5px 15px;
+        font-size: 35px;
+      }
+      .bannerHR {
+        width: 80%;
+      
+      }
+      .socialLinks {
+        gap: 16px;
+
+        svg {
+          width: 32px;
+          height: 32px;
+        }
+      }
+
+
+    }
+  }
+}
+
+@media screen and (max-width: 414px) and (min-width: 321px) {
+  .landingGrid {
+    .imgContainer {
+      width: 240px;
+      height: 240px;
+    }
+    .bannerText {
+      width: 85%;
+      .bannerName {
+        font-size: 28px;
+      }
+      .bannerTitle {
+        padding: 5px 15px;
+        font-size: 35px;
+      }
+      .bannerHR {
+        width: 70%;
+      }
+      .socialLinks {
+        gap: 16px;
+
+        svg {
+          width: 32px;
+          height: 32px;
+        }
+      }
+    }
+  }
+}
+
+@include breakpoint-only('xs') {
+  .landingGrid {
+    .imgContainer {
+      width: 380px;
+      height: 380px;
+    }
+    .bannerText {
+      width: 85%;
+      .bannerName {
+        font-size: 36px;
+      }
+      .bannerTitle {
+        padding: 5px 15px;
+        font-size: 43px;
+      }
+      .bannerHR {
+        width: 70%;
+      }
+     
+      .socialLinks {
+        gap: 20px;
+
+        svg {
+          width: 45px;
+          height: 45px;
+        }
+      }
+    }
+  }
+}
+
+@include breakpoint-only('sm') {
+  .landingGrid {
+    .imgContainer {
+      width: 400px;
+      height: 400px;
+    }
+    .bannerText {
+      width: 85%;
+      .bannerName {
+        font-size: 36px;
+      }
+      .bannerTitle {
+        padding: 5px 15px;
+        font-size: 43px;
+      }
+      .bannerHR {
+        width: 50%;
+      }
+      .socialLinks {
+        gap: 20px;
+
+        svg {
+          width: 45px;
+          height: 45px;
+        }
+      }
+    }
+  }
+}
+@include breakpoint-only('md') {
+  .landingGrid {
+    .imgContainer {
+      width: 500px;
+      height: 500px;
+    }
+    .bannerText {
+      width: 90%;
+      padding: 30px 0;
+      .bannerName {
+        font-size: 45px;
+      }
+      .bannerTitle {
+        padding: 8px 15px;
+        font-size: 53px;
+      }
+      .bannerHR {
+        width: 40%;
+      }
+      .socialLinks {
+        align-items: center;
+        justify-content: center;
+        width: 90%;
+
+          svg {
+        width: 45px;
+        height: 45px;
+      }
+      }
+    
+    }
+  }
+}

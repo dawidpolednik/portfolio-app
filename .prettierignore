@@ -1,0 +1,13 @@
+# next.js
+.next
+/.next/
+/out/
+
+# production
+/build
+
+# vercel
+.vercel
+
+# changelog
+CHANGELOG.md

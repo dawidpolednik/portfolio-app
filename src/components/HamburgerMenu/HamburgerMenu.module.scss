@@ -1,0 +1,93 @@
+@import '../../styles/fonts.scss';
+@import '../../styles/variables.scss';
+
+@mixin line {
+  height: 3px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+@keyframes hamburgerHover {
+  0% {
+    width: 100%;
+  }
+  50% {
+    width: 50%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.lineItem {
+  @include line;
+  width: 18px;
+  margin-bottom: 5px;
+}
+
+.lineItemShorter {
+  @include line;
+  width: 15px;
+  margin-bottom: 5px;
+}
+
+.lineItemShortest {
+  @include line;
+  width: 12px;
+}
+
+.hamburgerWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  padding: 6px;
+  height: 46px;
+  width: 46px;
+  background-color: #202630;
+  cursor: pointer;
+
+  &:hover,
+  &:active {
+    div {
+      width: 18px;
+    }
+    .lineItem {
+      animation: hamburgerHover 1s infinite ease-in-out;
+    }
+
+    .lineItemShorter {
+      animation: hamburgerHover 1s infinite ease-in-out forwards 200ms;
+    }
+
+    .lineItemShortest {
+      animation: hamburgerHover 1s infinite ease-in-out forwards 400ms;
+    }
+  }
+}
+
+.linesWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+@media screen and (max-width: 414px) {
+  .hamburgerWrapper {
+    right: 10%;
+  }
+}
+
+@include breakpoint-only('xs') {
+  .hamburgerWrapper {
+    right: 12%;
+  }
+}
+
+@include breakpoint-only('md') {
+  .hamburgerWrapper {
+    right: 8%;
+  }
+}

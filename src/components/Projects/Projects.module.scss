@@ -1,0 +1,550 @@
+@import '../../styles/fonts.scss';
+@import '../../styles/variables.scss';
+
+.container {
+  width: 100%;
+  background-color: #283d4b;
+  .projectsHeader {
+    min-height: 345px;
+    display: flex;
+    background-color: #16222a;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 110px;
+    clip-path: polygon(0 calc(100% - 90px), 100% 0, 100% 100%, 0 100%);
+    .projectsTitle {
+      font-family: $thirdFont;
+      padding-top: 70px;
+      margin: 0;
+      color: white;
+      font-size: 3.2rem;
+      letter-spacing: 1px;
+    }
+  }
+  .projectsBackground {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: #eee;
+    padding: 70px 0 20px;
+    .projectsSection {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(225px, 0.5fr));
+      grid-gap: 100px;
+      object-fit: cover;
+      max-width: 1180px;
+      width: 80%;
+      justify-content: center;
+
+    .projectsItem {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        background-color: #283d4b;
+        color: white;
+        .imgContainer {
+          position: relative;
+          width: 100%;
+          height: 300px;
+          overflow: hidden;
+
+          .img {
+            object-fit: cover;
+            transition: transform 0.5s ease;
+           
+          }
+
+          &:hover {
+            .img {
+              transform: scale(1.2);
+            }
+          }
+        }
+        .projectContent {
+          font-family: $homeFont;
+          width: 80%;
+          text-align: center;
+          .projectTitle {
+            font-family: $roboto;
+            letter-spacing: 1px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 7px;
+            font-size: 24px;
+            line-height: 32px;
+            margin: 24px 0 16px;
+          }
+          .projectDescription {
+            font-weight: 300;
+          }
+          .projectTools {
+            font-weight: 300;
+            font-size: 0.9rem;
+          }
+          .buttonContainer {
+            width: 100%;
+            display: grid;
+            padding-bottom: 40px;
+            grid-template-columns: 140px;
+            justify-content: center;
+          }
+
+          .buttonsContainer {
+            width: 100%;
+            display: grid;
+            padding-bottom: 40px;
+            grid-template-columns: 140px 140px;
+            justify-content: center;
+            grid-gap: 50px 40px;
+          }
+          .buttonsContainer,
+          .buttonContainer {
+            padding-top: 15px;
+            .buttonItem {
+              font-family: $thirdFont;
+              display: block;
+              text-decoration: none;
+              background-color: transparent;
+              text-transform: uppercase;
+              text-align: center;
+              line-height: 20px;
+              font-size: 1rem;
+              color: #eee;
+              border: 3px solid #eee;
+              padding: 15px;
+              outline: none;
+              transition: 0.6s;
+              &:hover,
+              &:active {
+                cursor: pointer;
+                color: black !important;
+                border-radius: 50px;
+                border-color: black;
+                transition: all 0.6s ease 0s;
+                font-weight: bold;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 320px) and (max-aspect-ratio: 13/9) {
+  .container {
+    .projectsHeader {
+      min-height: 107px;
+      padding-right: 20px;
+      clip-path: polygon(0 calc(100% - 58px), 100% 0, 100% 100%, 0 100%);
+      .projectsTitle {
+        padding-top: 20px;
+        font-size: 1rem;
+      }
+    }
+    .projectsBackground {
+      width: 100%;
+      padding: 50px 0 20px;
+      .projectsSection {
+        width: 100%;
+        grid-template-columns: repeat(auto-fill, minmax(100%, 0.5fr));
+        grid-gap: 60px;
+        .projectsItem {
+          .imgContainer {
+            height: 180px;
+          }
+          .projectContent {
+            width: 70%;
+            .projectTitle {
+              letter-spacing: 1px;
+              border-bottom: 2px solid #eee;
+              padding-bottom: 7px;
+            }
+            .projectDescription {
+              font-display: 0.9rem;
+            }
+            .projectTools {
+              font-size: 0.8rem;
+            }
+            .buttonsContainer {
+              width: 100%;
+              grid-template-columns: 110px 110px;
+              justify-content: center;
+              grid-gap: 30px;
+              padding: 10px 0 40px;
+              .buttonItem {
+                font-size: 0.8rem;
+                padding: 15px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 414px) and (min-width: 321px) and (max-aspect-ratio: 13/9) {
+  .container {
+    .projectsHeader {
+      min-height: 128px;
+      padding-right: 20px;
+      clip-path: polygon(0 calc(100% - 65px), 100% 0, 100% 100%, 0 100%);
+      .projectsTitle {
+        padding-top: 30px;
+        font-size: 1.2rem;
+      }
+    }
+    .projectsBackground {
+      width: 100%;
+      padding: 50px 0 20px;
+      .projectsSection {
+        width: 100%;
+        grid-template-columns: repeat(auto-fill, minmax(100%, 0.5fr));
+        grid-gap: 60px;
+
+        .projectsItem {
+          .imgContainer {
+            height: 180px;
+          }
+          .projectContent {
+            width: 70%;
+            .projectTitle {
+              letter-spacing: 1px;
+              border-bottom: 2px solid #eee;
+              padding-bottom: 7px;
+            }
+            .projectDescription {
+              font-display: 0.9rem;
+            }
+            .projectTools {
+              font-size: 0.8rem;
+            }
+            .buttonsContainer {
+              width: 100%;
+              grid-template-columns: 110px 110px;
+              justify-content: center;
+              grid-gap: 30px;
+              padding: 10px 0 40px;
+              .buttonItem {
+                font-size: 0.8rem;
+                padding: 15px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include breakpoint-only('xs') {
+  .container {
+    .projectsHeader {
+      min-height: 128px;
+      padding-right: 20px;
+      clip-path: polygon(0 calc(100% - 52px), 100% 0, 100% 100%, 0 100%);
+      .projectsTitle {
+        padding-top: 30px;
+        font-size: 1.3rem;
+      }
+    }
+    .projectsBackground {
+      width: 100%;
+      padding: 50px 0 20px;
+      .projectsSection {
+        width: 90%;
+        grid-template-columns: repeat(auto-fill, minmax(100%, 0.5fr));
+        grid-gap: 60px;
+
+        .projectsItem {
+          .imgContainer {
+            height: 240px;
+          }
+          .projectContent {
+            width: 70%;
+            .projectTitle {
+              letter-spacing: 1px;
+            }
+            .projectDescription {
+              text-align: justify;
+              font-display: 0.9rem;
+            }
+            .projectTools {
+              font-size: 0.8rem;
+            }
+            .buttonsContainer {
+              width: 100%;
+              grid-template-columns: 130px 130px;
+              justify-content: center;
+              grid-gap: 40px;
+              padding: 10px 0 40px;
+              .buttonItem {
+                font-size: 0.9rem;
+                padding: 15px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 960px) and (min-width: 600px) and (orientation: portrait) {
+  .container {
+    .projectsHeader {
+      min-height: 205px;
+      padding-right: 20px;
+      clip-path: polygon(0 calc(100% - 30px), 100% 0, 100% 100%, 0 100%);
+      .projectsTitle {
+        padding-top: 50px;
+        font-size: 1.6rem;
+      }
+    }
+    .projectsBackground {
+      padding: 50px 0 20px;
+      .projectsSection {
+        width: 80%;
+        grid-template-columns: repeat(auto-fill, minmax(100%, 0.5fr));
+        grid-gap: 80px;
+
+        .projectsItem {
+          .imgContainer {
+            height: 300px;
+          }
+          .projectContent {
+            width: 70%;
+            .projectTitle {
+              letter-spacing: 1px;
+            }
+            .projectDescription {
+              text-align: justify;
+              font-display: 0.9rem;
+            }
+            .projectTools {
+              font-size: 0.8rem;
+            }
+            .buttonsContainer {
+              width: 100%;
+              grid-template-columns: 130px 130px;
+              justify-content: center;
+              grid-gap: 40px;
+              padding: 10px 0 40px;
+              .buttonItem {
+                font-size: 0.9rem;
+                padding: 15px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 960px) and (min-width: 600px) and (orientation: landscape) {
+  .container {
+    .projectsHeader {
+      min-height: 170px;
+      padding-right: 30px;
+      clip-path: polygon(0 calc(100% - 54px), 100% 0, 100% 100%, 0 100%);
+      .projectsTitle {
+        padding-top: 30px;
+        font-size: 1.4rem;
+      }
+    }
+    .projectsBackground {
+      padding: 50px 0 20px;
+      .projectsSection {
+        width: 70%;
+        grid-template-columns: repeat(auto-fill, minmax(100%, 0.5fr));
+        grid-gap: 80px;
+
+        .projectsItem {
+          .imgContainer {
+            height: 240px;
+          }
+          .projectContent {
+            width: 70%;
+            .projectTitle {
+              letter-spacing: 1px;
+            }
+            .projectDescription {
+              text-align: justify;
+              font-display: 0.9rem;
+            }
+            .projectTools {
+              font-size: 0.8rem;
+            }
+            .buttonsContainer {
+              width: 100%;
+              grid-template-columns: 130px 130px;
+              justify-content: center;
+              grid-gap: 40px;
+              padding: 10px 0 40px;
+              .buttonItem {
+                font-size: 0.9rem;
+                padding: 15px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 1280px) and (min-width: 960px) and (orientation: portrait) {
+  .container {
+    .projectsHeader {
+      min-height: 205px;
+      padding-right: 40px;
+      clip-path: polygon(0 calc(100% - 52px), 100% 0, 100% 100%, 0 100%);
+      .projectsTitle {
+        padding-top: 30px;
+        font-size: 2.3rem;
+      }
+    }
+    .projectsBackground {
+      padding: 50px 0 20px;
+      .projectsSection {
+        width: 65%;
+        grid-template-columns: repeat(auto-fill, minmax(100%, 0.5fr));
+        grid-gap: 80px;
+
+        .projectsItem {
+          .imgContainer {
+            height: 300px;
+          }
+          .projectContent {
+            width: 70%;
+            .projectTitle {
+              letter-spacing: 1px;
+            }
+            .projectDescription {
+              text-align: justify;
+              font-display: 0.9rem;
+            }
+            .projectTools {
+              font-size: 0.8rem;
+            }
+            .buttonsContainer {
+              width: 100%;
+              grid-template-columns: 130px 130px;
+              justify-content: center;
+              grid-gap: 40px;
+              padding: 30px 0 40px;
+              .buttonItem {
+                font-size: 0.9rem;
+                padding: 15px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 1024px) and (min-width: 960px) and (orientation: landscape) {
+  .container {
+    .projectsHeader {
+      min-height: 192px;
+      padding-right: 40px;
+      clip-path: polygon(0 calc(100% - 72px), 100% 0, 100% 100%, 0 100%);
+      .projectsTitle {
+        padding-top: 40px;
+        font-size: 2.2rem;
+      }
+    }
+    .projectsBackground {
+      padding: 50px 0 20px;
+      .projectsSection {
+        width: 65%;
+        grid-template-columns: repeat(auto-fill, minmax(100%, 0.5fr));
+        grid-gap: 80px;
+
+        .projectsItem {
+          .imgContainer {
+            height: 300px;
+          }
+          .projectContent {
+            width: 70%;
+            .projectTitle {
+              letter-spacing: 1px;
+            }
+            .projectDescription {
+              text-align: justify;
+              font-display: 0.9rem;
+            }
+            .projectTools {
+              font-size: 0.8rem;
+            }
+            .buttonsContainer {
+              width: 100%;
+              grid-template-columns: 130px 130px;
+              justify-content: center;
+              grid-gap: 40px;
+              padding: 30px 0 40px;
+              .buttonItem {
+                font-size: 0.9rem;
+                padding: 15px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 1365px) and (min-width: 1025px) and (orientation: landscape) {
+  .container {
+    .projectsHeader {
+      min-height: 192px;
+      padding-right: 40px;
+      clip-path: polygon(0 calc(100% - 72px), 100% 0, 100% 100%, 0 100%);
+      .projectsTitle {
+        padding-top: 40px;
+        font-size: 2.2rem;
+      }
+    }
+    .projectsBackground {
+      padding: 50px 0 20px;
+      .projectsSection {
+        width: 50%;
+        grid-template-columns: repeat(auto-fill, minmax(100%, 0.5fr));
+        grid-gap: 80px;
+
+        .projectsItem {
+          .imgContainer {
+            height: 300px;
+          }
+          .projectContent {
+            width: 70%;
+            .projectTitle {
+              letter-spacing: 1px;
+            }
+            .projectDescription {
+              text-align: justify;
+              font-display: 0.9rem;
+            }
+            .projectTools {
+              font-size: 0.8rem;
+            }
+            .buttonsContainer {
+              width: 100%;
+              grid-template-columns: 130px 130px;
+              justify-content: center;
+              grid-gap: 40px;
+              padding: 30px 0 40px;
+              .buttonItem {
+                font-size: 0.9rem;
+                padding: 15px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
