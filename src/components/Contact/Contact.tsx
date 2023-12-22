@@ -1,4 +1,4 @@
-import React, { FC, useCallback, useState } from 'react';
+import React, { FC, useCallback, useEffect, useState } from 'react';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useTranslation } from 'next-i18next';
@@ -25,22 +25,14 @@ const Contact: FC = () => {
     message: yup.string().required().min(10),
   });
 
-  const {
-    handleSubmit,
-    control,
-    formState,
-    trigger,
-    reset,
-    resetField,
-    getValues,
-  } = useForm<FormValues>({
+  const { handleSubmit, control, formState, reset } = useForm<FormValues>({
     resolver: yupResolver(schema),
     defaultValues,
   });
 
   const [isRequestRejected, setIsRequestRejected] = useState<boolean>(false);
 
-  const { errors, isLoading, isSubmitSuccessful, isSubmitting } = formState;
+  const { isSubmitSuccessful, isSubmitting } = formState;
 
   const onSubmit = useCallback(async (data: FormValues) => {
     const { name, email, message } = data;
@@ -50,12 +42,20 @@ const Contact: FC = () => {
         email,
         message,
       });
-      // reset();
     } catch (error) {
-      console.log({ error });
+      console.error({ error });
       setIsRequestRejected(true);
     }
   }, []);
+
+  useEffect(() => {
+    if (isSubmitSuccessful) {
+      setTimeout(() => {
+        reset();
+      }, 5000);
+    }
+    // eslint-disable-next-line
+  }, [isSubmitSuccessful]);
 
   return (
     <section className={styles.container} id='contact'>
@@ -78,9 +78,8 @@ const Contact: FC = () => {
               name='name'
               render={({
                 field: { value, onChange },
-                fieldState: { error, isTouched },
+                fieldState: { error },
               }) => {
-                console.log('isTouched :>> ', isTouched);
                 return (
                   <Input
                     name='name'

@@ -10,6 +10,18 @@ const nextConfig = {
   reactStrictMode: true,
   trailingSlash: true,
   i18n,
+
+  async redirects() {
+    return [
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'www.dawidpolednik.pl' }],
+        destination: 'https://dawidpolednik.pl/:path*',
+        permanent: true,
+      },
+    ];
+  },
+
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/i,

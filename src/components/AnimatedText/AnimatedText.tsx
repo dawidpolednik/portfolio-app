@@ -66,6 +66,7 @@ export const AnimatedText = ({
     }
 
     return () => clearTimeout(timeout);
+    // eslint-disable-next-line
   }, [isInView, currentLocale]);
 
   return (

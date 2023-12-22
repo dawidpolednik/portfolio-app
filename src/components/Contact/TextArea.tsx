@@ -1,5 +1,5 @@
 import { FC, SyntheticEvent } from 'react';
-import style from './Contact.module.scss';
+import styles from './Contact.module.scss';
 import { ErrorMessage } from '@/components/Contact/ErrorMessage';
 
 interface TextAreaProps {
@@ -20,11 +20,11 @@ const TextArea: FC<TextAreaProps> = ({
   return (
     <>
       {errorMessage && <ErrorMessage message={errorMessage} />}
-      <label className={style.label} htmlFor={name}></label>
-      <div className={`${style.col}`}>
+      <label className={styles.label} htmlFor={name}></label>
+      <div className={`${styles.textareaWrapper}`}>
         <textarea
           name={name}
-          className={style.effect}
+          className={styles.textarea}
           rows={15}
           cols={50}
           placeholder={placeholder}

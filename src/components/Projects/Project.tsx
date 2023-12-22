@@ -39,7 +39,14 @@ const ProjectFC = ({
       }}
     >
       <div className={styles.imgContainer}>
-        <Image src={image} className={styles.img} alt={title} fill={true} />
+        <Image
+          src={image}
+          className={styles.img}
+          alt={title}
+          fill={true}
+          sizes='99vw'
+          priority={true}
+        />
       </div>
 
       <div className={styles.projectContent}>

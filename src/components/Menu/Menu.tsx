@@ -14,6 +14,21 @@ interface MenuProps {
   isOpen: boolean;
 }
 
+const fadeInAnimationVariant: Variants = {
+  initial: {
+    opacity: 0,
+    y: 100,
+  },
+  animate: (idx: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 1,
+      delay: 0.05 * idx,
+    },
+  }),
+};
+
 export const Menu: FC<MenuProps> = ({ isOpen, onClose }) => {
   const menuRef = useRef<HTMLDivElement>(null);
 
@@ -21,33 +36,21 @@ export const Menu: FC<MenuProps> = ({ isOpen, onClose }) => {
 
   const { events } = useRouter();
 
-  const menuItems: MenuItem[] = [
-    { id: 1, name: t('menuOptions.home'), toNavigate: 'home' },
-    { id: 2, name: t('menuOptions.aboutMe'), toNavigate: 'aboutMe' },
-    { id: 3, name: t('menuOptions.education'), toNavigate: 'education' },
-    {
-      id: 4,
-      name: t('menuOptions.technologies'),
-      toNavigate: 'technologies',
-    },
-    { id: 5, name: t('menuOptions.projects'), toNavigate: 'projects' },
-    { id: 6, name: t('menuOptions.contact'), toNavigate: 'contact' },
-  ];
-
-  const fadeInAnimationVariant: Variants = {
-    initial: {
-      opacity: 0,
-      y: 100,
-    },
-    animate: (idx: number) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 1,
-        delay: 0.05 * idx,
+  const menuItems: MenuItem[] = useMemo(
+    () => [
+      { id: 1, name: t('menuOptions.home'), toNavigate: 'home' },
+      { id: 2, name: t('menuOptions.aboutMe'), toNavigate: 'aboutMe' },
+      { id: 3, name: t('menuOptions.education'), toNavigate: 'education' },
+      {
+        id: 4,
+        name: t('menuOptions.technologies'),
+        toNavigate: 'technologies',
       },
-    }),
-  };
+      { id: 5, name: t('menuOptions.projects'), toNavigate: 'projects' },
+      { id: 6, name: t('menuOptions.contact'), toNavigate: 'contact' },
+    ],
+    [t],
+  );
 
   useEffect(() => {
     if (isOpen && menuRef?.current) disableBodyScroll(menuRef?.current);
@@ -56,7 +59,7 @@ export const Menu: FC<MenuProps> = ({ isOpen, onClose }) => {
   const handleOnClose = useCallback(() => {
     onClose();
     if (menuRef?.current) enableBodyScroll(menuRef.current);
-  }, [onClose, menuRef.current]);
+  }, [onClose, menuRef]);
 
   useEffect(() => {
     events.on('hashChangeStart', handleOnClose);
@@ -107,7 +110,7 @@ export const Menu: FC<MenuProps> = ({ isOpen, onClose }) => {
         </ul>
       </nav>
     ),
-    [menuItems, handleOnClose],
+    [menuItems],
   );
 
   if (!isOpen) return null;

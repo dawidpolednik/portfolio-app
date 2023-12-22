@@ -1,9 +1,6 @@
 import { FC } from 'react';
 import styles from './AboutMe.module.scss';
 import { useTranslation } from 'next-i18next';
-import { useInView } from 'framer-motion';
-import { useRouter } from 'next/router';
-import { useHandleIdSection } from '@/hooks/useHandleIdSection';
 import { AnimatedText } from '@/components/AnimatedText/AnimatedText';
 import { NavigationSectionName } from '@/models/NavigationSectionName';
 
@@ -13,7 +10,7 @@ const AboutMe: FC = () => {
   const { t } = useTranslation('common');
 
   return (
-    <div className={styles.aboutContainer} id={'aboutMe'}>
+    <div className={styles.aboutContainer} id={sectionName}>
       <section className={styles.aboutMeSection}>
         <AnimatedText
           text={t('aboutMeSection.header')}

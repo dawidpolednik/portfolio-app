@@ -1,4 +1,6 @@
-export const socialMediaData: SocialMedium[] = [
+import { SocialMedia } from '@/models/SocialMedia';
+
+export const socialMediaData: SocialMedia[] = [
   {
     href: 'https://www.facebook.com/dawid.polednik',
     type: 'facebook',

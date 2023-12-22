@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import { title } from 'process';
 import { FC, PropsWithChildren } from 'react';
 
 type SeoProps = PropsWithChildren<{

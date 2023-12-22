@@ -1,4 +1,4 @@
-import React, { FC, useCallback, useMemo } from 'react';
+import React, { FC, useCallback } from 'react';
 import styles from './LanguageSwitcher.module.scss';
 import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
