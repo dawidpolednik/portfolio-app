@@ -21,7 +21,7 @@ const Projects = () => {
       },
       {
         id: 2,
-        image: '/images/code.png',
+        image: '/images/listingCode.png',
         title: t('projectsSection.detectLabelsComparison.header'),
         description: t('projectsSection.detectLabelsComparison.description'),
         tools:
