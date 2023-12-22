@@ -4,7 +4,6 @@ import { useTranslation } from 'next-i18next';
 import Home from '@/components/Home/Home';
 import { GetStaticPropsContext } from 'next';
 import { Seo } from '@/components/Seo';
-import OGImage from '~/images/og-image.png';
 
 export type LanguageOptions = 'pl' | 'en';
 
@@ -34,7 +33,7 @@ const App: FC = () => {
           currentLocale === 'pl' ? '/' : currentLocale + '/'
         }`}
         og={{
-          imageSrc: OGImage.src,
+          imageSrc: '/images/og-image.png',
         }}
         locale={currentLocale}
       />

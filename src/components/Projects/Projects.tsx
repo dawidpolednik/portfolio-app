@@ -2,11 +2,6 @@ import React, { useMemo } from 'react';
 import Project from './Project';
 import styles from './Projects.module.scss';
 import { useTranslation } from 'next-i18next';
-import DelfinagramImage from '~/images/delfinagram.png';
-import ListingCodeImage from '~/images/code.png';
-import CurrencyConverterImage from '~/images/currencyConverter.png';
-import CitiesSearcherImage from '~/images/citiesSearcher.png';
-import AmongUsImage from '~/images/amongUs.png';
 import { AnimatedText } from '@/components/AnimatedText/AnimatedText';
 import { Project as IProject } from '@/models/Project';
 
@@ -17,7 +12,7 @@ const Projects = () => {
     () => [
       {
         id: 1,
-        image: DelfinagramImage.src,
+        image: '/images/delfinagram.png',
         title: t('projectsSection.delfinagram.header'),
         description: t('projectsSection.delfinagram.description'),
         tools:
@@ -26,7 +21,7 @@ const Projects = () => {
       },
       {
         id: 2,
-        image: ListingCodeImage.src,
+        image: '/images/code.png',
         title: t('projectsSection.detectLabelsComparison.header'),
         description: t('projectsSection.detectLabelsComparison.description'),
         tools:
@@ -35,7 +30,7 @@ const Projects = () => {
       },
       {
         id: 3,
-        image: CurrencyConverterImage.src,
+        image: '/images/currencyConverter.png',
         title: t('projectsSection.currencyConverter.header'),
         description: t('projectsSection.currencyConverter.description'),
         tools: 'React, Redux, SASS(SCSS) , ES6, MaterialUI, GitKraken, ',
@@ -44,7 +39,7 @@ const Projects = () => {
       },
       {
         id: 4,
-        image: CitiesSearcherImage.src,
+        image: '/images/citiesSearcher.png',
         title: t('projectsSection.citiesSearcher.header'),
         description: t('projectsSection.citiesSearcher.description'),
         tools: 'React, Redux, SASS(SCSS) , ES6, MaterialUI, GitKraken, ',
@@ -53,7 +48,7 @@ const Projects = () => {
       },
       {
         id: 5,
-        image: AmongUsImage.src,
+        image: '/images/amongUs.png',
         title: t('projectsSection.amongUs.header'),
         description: t('projectsSection.amongUs.description'),
         tools: 'Vanilla JS, ES6, TypeScript, SASS(SCSS) , Parcel',
