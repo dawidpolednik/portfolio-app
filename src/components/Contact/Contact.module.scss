@@ -95,7 +95,7 @@
             &:focus {
               border: 0;
               outline-style: solid;
-              outline-color:gray;
+              outline-color: gray;
             }
 
             &:hover:not(&:focus),
@@ -130,19 +130,26 @@
         }
 
         .buttonsContainer {
-          display: grid;
-          grid-template-columns: 140px 120px;
+          max-width: 500px;
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
           padding: 25px 0 0;
-          grid-gap: 40px;
+          gap: 40px;
 
           .formButton {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 120px;
             font-family: $secondFont;
             font-weight: 300;
             background: transparent;
             border: 2px solid #eee;
             border-radius: 20px;
             color: #eee;
-            padding: 20px 0px;
+            padding: 20px 40px;
             font-size: 0.9rem;
             line-height: 0.9rem;
             letter-spacing: 1px;
@@ -163,10 +170,14 @@
         }
       }
 
+      .formSpinnerWrapper {
+        padding-top: 20px;
+      }
+
       .confirmationContainer {
-        height: 0;
+        max-height: 0;
         z-index: 70;
-        transition: height 0.6s ease-out;
+        transition: max-height 0.6s ease-out;
         p {
           font-family: $thirdFont;
           line-height: 22px;
@@ -224,7 +235,6 @@
           .buttonsContainer {
             grid-gap: 20px;
             .formButton {
-              padding: 20px 0px;
               font-size: 0.8rem;
             }
           }
@@ -258,7 +268,6 @@
           .buttonsContainer {
             grid-gap: 20px;
             .formButton {
-              padding: 20px 0px;
               font-size: 0.8rem;
             }
           }
@@ -342,7 +351,6 @@
         .contactForm {
           padding: 20px 0 60px;
           .col {
-            float: left;
             width: 80%;
             input[type='text'],
             textarea,
@@ -364,7 +372,6 @@
           .buttonsContainer {
             grid-gap: 20px;
             .formButton {
-              padding: 20px 0px;
               font-size: 0.8rem;
             }
           }
@@ -414,7 +421,6 @@
           .buttonsContainer {
             grid-gap: 40px;
             .formButton {
-              padding: 20px 0px;
               font-size: 0.9rem;
             }
           }
@@ -468,7 +474,6 @@
             padding: 20px 0 0px;
             grid-gap: 40px;
             .formButton {
-              padding: 20px 0px;
               font-size: 0.9rem;
             }
           }
@@ -522,7 +527,6 @@
             padding: 20px 0 0px;
             grid-gap: 40px;
             .formButton {
-              padding: 20px 0px;
               font-size: 0.9rem;
             }
           }
@@ -576,7 +580,6 @@
             padding: 10px 0 0px;
             grid-gap: 40px;
             .formButton {
-              padding: 20px 0px;
               font-size: 0.9rem;
             }
           }

@@ -9,6 +9,7 @@ import { AnimatedText } from '@/components/AnimatedText/AnimatedText';
 import sendMail from '@/service/email-service';
 import { Controller, useForm } from 'react-hook-form';
 import { FormValues } from '@/models/FormValues';
+import { LoadingIndicator } from '../LoadingIndicator/LoadingIndicator';
 
 const Contact: FC = () => {
   const defaultValues: FormValues = {
@@ -169,6 +170,11 @@ const Contact: FC = () => {
               />
             </div>
 
+            <LoadingIndicator
+              visible={isSubmitting}
+              className={styles.formSpinnerWrapper}
+            />
+
             {(isSubmitSuccessful || isRequestRejected) && (
               <div className={styles.confirmationContainer}>
                 <p className={styles.confirmationMessage}>
@@ -179,111 +185,6 @@ const Contact: FC = () => {
               </div>
             )}
           </form>
-
-          {/* <Formik
-            initialValues={initialValues}
-            validationSchema={Yup.object().shape({
-              name: Yup.string().min(5).required(),
-              email: Yup.string().email().required(),
-              message: Yup.string().min(10).required(),
-            })}
-            onSubmit={async (
-              values,
-              { resetForm, setStatus, setErrors, setSubmitting },
-            ) => {
-              setStatus({ success: false });
-              try {
-                await sendMail({
-                  name: values.name,
-                  email: values.email,
-                  message: values.message,
-                });
-                resetForm();
-                setStatus({ success: t('contactSection.requestResolved') });
-              } catch (error) {
-                setStatus({
-                  error: t('contactSection.errorMessages.requestRejected'),
-                });
-                setErrors(error as any);
-              } finally {
-                setSubmitting(false);
-              }
-            }}
-            render={({
-              errors,
-              touched,
-              values,
-              handleChange,
-              status,
-            }: FormikProps<FormMailerValues>) => (
-              <Form className={styles.contactForm}>
-                {errors.name && (
-                  <Error
-                    touched={!!touched.name}
-                    name={errors.name}
-                    content={t('contactSection.errorMessages.name')}
-                  />
-                )}
-                <Input
-                  name='name'
-                  placeholder={t('contactSection.placeholders.name')}
-                  value={values.name}
-                  onChange={handleChange}
-                />
-                {errors.email && (
-                  <Error
-                    touched={!!touched.email}
-                    name={errors.email}
-                    content={t('contactSection.errorMessages.email')}
-                  />
-                )}
-                <Input
-                  name='email'
-                  placeholder={t('contactSection.placeholders.email')}
-                  value={values.email}
-                  onChange={handleChange}
-                />
-                {errors.message && (
-                  <Error
-                    touched={!!touched.message}
-                    name={errors.message}
-                    content={t('contactSection.errorMessages.message')}
-                  />
-                )}
-
-                <TextArea
-                  name='message'
-                  placeholder={t('contactSection.placeholders.message')}
-                  value={values.message}
-                  onChange={handleChange}
-                />
-                <div className={styles.buttonsContainer}>
-                  <input
-                    className={styles.formButton}
-                    type='reset'
-                    value={`${t('contactSection.buttons.reset')}`}
-                  />
-                  <input
-                    className={styles.formButton}
-                    type='submit'
-                    value={`${t('contactSection.buttons.submit')}`}
-                  />
-                </div> */}
-          {/* {status && (
-                  <div className={styles.confirmationContainer}>
-                    <p
-                      className={
-                        (status.success && styles.confirmationMessage) ||
-                        (status.error && styles.errorMessage)
-                      }
-                    >
-                      {status.success ? status.success : status.error}
-                    </p>
-                  </div>
-                )}
-              </Form> */}
-          {/* )} */}
-          {/* /> */}
         </div>
       </div>
     </section>
