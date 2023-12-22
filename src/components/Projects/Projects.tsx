@@ -48,7 +48,7 @@ const Projects = () => {
       },
       {
         id: 5,
-        image: '/images/amongUs.png',
+        image: '/images/among-us-game.png',
         title: t('projectsSection.amongUs.header'),
         description: t('projectsSection.amongUs.description'),
         tools: 'Vanilla JS, ES6, TypeScript, SASS(SCSS) , Parcel',

@@ -15,8 +15,8 @@
     .educationTitle {
       font-family: $thirdFont;
       color: white;
-      font-size: 3.5rem;
-      letter-spacing: 2px;
+      font-size: 3.3rem;
+      letter-spacing: 1px;
     }
   }
   .educationSection {
@@ -126,9 +126,8 @@
 @media screen and (max-width: 320px) and (max-aspect-ratio: 13/9) {
   .container {
     .educationHeader {
-      padding: 5px;
       .educationTitle {
-        font-size: 1.5rem;
+        font-size: 1.9rem;
         letter-spacing: 1px;
       }
     }
@@ -171,7 +170,7 @@
 @media screen and (max-width: 414px) and (min-width: 321px) and (max-aspect-ratio: 13/9) {
   .container {
     .educationHeader {
-      padding: 7px;
+      // padding: 7px;
       .educationTitle {
         font-size: 1.7rem;
         letter-spacing: 1px;
@@ -215,7 +214,6 @@
 @include breakpoint-only("xs") {
   .container {
     .educationHeader {
-      padding: 15px;
       .educationTitle {
         font-size: 2.1rem;
         letter-spacing: 2px;
@@ -260,7 +258,6 @@
 @include breakpoint-only("sm") {
   .container {
     .educationHeader {
-      padding: 15px;
       .educationTitle {
         font-size: 2.1rem;
         letter-spacing: 2px;
@@ -304,7 +301,6 @@
 @include breakpoint-only("md") {
   .container {
     .educationHeader {
-      padding: 15px;
       .educationTitle {
         font-size: 2.1rem;
         letter-spacing: 2px;
